@@ -1,0 +1,21 @@
+{
+   "1": {
+      "id_s": "1",
+      "name_s": "hdb",
+      "pwd_s": "hdb",
+      "role_s": "user",
+      "trip_id" : "1",
+      "booked_events_l" : [],
+      "sugg_events_l" : []
+
+   },
+   "2": {
+      "id_s": "2",
+      "name_s": "ml",
+      "pwd_s": "ml",
+      "role_s": "user",
+      "trip_id" : "1",
+      "booked_events_l" : [],
+      "sugg_events_l" : []
+   }
+}

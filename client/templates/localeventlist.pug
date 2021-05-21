@@ -1,0 +1,25 @@
+doctype html
+html(lang='de')
+  head
+    title= "Liste lokale Veranstaltungen"
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/styles/list.css')
+  body
+    table
+      tr
+        th= "Datum"
+        th= "Ort"
+        th= "Bezeichnung"
+        th= "Veranstalter"
+      each localEvent_o in allLocalEvents_apl
+        tr
+          td= localEvent_o.datum_s
+          td= localEvent_o.location_s
+          td= localEvent_o.name_s
+          td= localEvent_o.orga_s
+          td
+            a(href=`/localevent/${localEvent_o.id_s}`)= localEvent_o.name_s
+
+    a(href="/localevent/0" class="e-button")= "Hinzufügen"

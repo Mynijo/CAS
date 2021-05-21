@@ -1,0 +1,15 @@
+{
+   "version": "0.2.0",
+   "configurations": [
+      {
+         "name": "Launch sle1_teil2",
+         "program": "${workspaceFolder}/server/main.js",
+         "cwd": "${workspaceFolder}/server/",
+         "request": "launch",
+         "skipFiles": [
+            "<node_internals>/**"
+         ],
+         "type": "pwa-node"
+      }
+   ]
+}

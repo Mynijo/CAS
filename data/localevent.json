@@ -1,0 +1,62 @@
+{
+   "1": {
+      "id_s": "1",
+      "name_s" : "Bingo",
+      "location_s": "BingoHouse",
+      "datum_s": "15.15.1915",
+      "start_time_s": "16:00",
+      "end_time_s": "18:00",
+      "price_s": "12",
+      "deadline_s": "01.01.2025",
+      "orga_s": "TimertraverlGmbH",
+      "trip_id": "1"
+   },
+   "2": {
+      "id_s": "2",
+      "name_s" : "Waffle baking",
+      "location_s": "E01",
+      "datum_s": "07.7.2021",
+      "start_time_s": "12:00",
+      "end_time_s": "14:00",
+      "price_s": "5",
+      "deadline_s": "01.07.2021",
+      "orga_s": "WafflesAndFriends",
+      "trip_id": "1"
+   },
+   "3": {
+      "id_s": "3",
+      "name_s" : "Painball",
+      "location_s": "U05",
+      "datum_s": "31.10.2021",
+      "start_time_s": "22:00",
+      "end_time_s": "24:00",
+      "price_s": "0",
+      "deadline_s": "1.10.2021",
+      "orga_s": "PierceAndStretch AG",
+      "trip_id": "1"
+   },
+   "4": {
+      "id_s": "4",
+      "name_s" : "Speed Dating",
+      "location_s": "Park",
+      "datum_s": "01.1.2021",
+      "start_time_s": "18:00",
+      "end_time_s": "21:00",
+      "price_s": "50",
+      "deadline_s": "01.07.2021",
+      "orga_s": "DateWithSpeed",
+      "trip_id": "2"
+   },
+   "5": {
+      "id_s": "5",
+      "name_s" : "AC DC",
+      "location_s": "Stadium",
+      "datum_s": "01.1.2024",
+      "start_time_s": "15:00",
+      "end_time_s": "24:00",
+      "price_s": "120",
+      "deadline_s": "01.01.2023",
+      "orga_s": "WafflesAndFriends",
+      "trip_id": "2"
+   }
+}
