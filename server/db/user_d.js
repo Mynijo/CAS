@@ -30,13 +30,12 @@ class UserData_cl {
    }
 
    get_by_id (id) {
-      let data_a = [];
       for (let key_s in this.allData_o) {
          if (key_s == id) {
-            data_a.push(this.allData_o[key_s]);
+            return this.allData_o[key_s];
          }
       }
-      return data_a;
+      return null;
    }
 
    add (data_opl) {
