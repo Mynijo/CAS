@@ -42,14 +42,15 @@ router_o.post(ressourcePath_s, function(req_opl, res_ops) {
     }
 
     router_o.post(ressourcePath_s + '/add_sugg/:id', function(req_opl, res_ops) {
-        let id_s = userData_o.add_sugg(req_opl.body);
+        let id_s = userData_o.add_sugg(req_opl.body, req_opl.params.id);
         res_ops.redirect('/organizer/UserList');
     });
 
     router_o.post(ressourcePath_s + '/add_book/:id', function(req_opl, res_ops) {
-        let id_s = userData_o.add_book(req_opl.body);
+        let id_s = userData_o.add_book(req_opl.body, req_opl.params.id);
         res_ops.redirect('/organizer/UserList');
     });
+
     router_o.post(ressourcePath_s + '/create/:id', function(req_opl, res_ops) {
         let id_s = userData_o.add(req_opl.body);
         res_ops.redirect('/organizer/UserList');

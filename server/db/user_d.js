@@ -47,7 +47,7 @@ class UserData_cl {
         return id_s;
     }
 
-    add_sugg(data_opl) {
+    add_sugg(data_opl, id) {
       if (id in this.allData_o) {
          if(data_opl["new_option"] != "")
          {
@@ -59,7 +59,7 @@ class UserData_cl {
      }
   }
 
-   add_book(data_opl) {
+   add_book(data_opl, id) {
       if (id in this.allData_o) {
          if(data_opl["new_option"] != "")
          {
