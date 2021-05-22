@@ -43,7 +43,13 @@ class LocalEventView_cl {
     }
 
     userSetting_px(data_apl) {
-        let markup_s = this.compiledUserSettingTemplate_p({ allLocalEvents_apl: data_apl });
+        let action_s;
+        if (data_opl["id_s"] == "0") {
+           action_s = "create";
+        } else {
+           action_s = "save";
+        }
+        let markup_s = this.compiledUserSettingTemplate_p({action_s: action_s, localEvent_opl: data_opl});
         return markup_s;
     }
     eventSetting_px(data_apl) {
