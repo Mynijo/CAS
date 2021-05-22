@@ -9,7 +9,8 @@ const FS = require('fs');
 const PATH = require('path');
 const EXPRESS = require('express');
 const userData_o = require('../db/user_d');
-const localUserView_o = require('../view/organizer_v');
+const localEventData_o = require('../db/localevent_d');
+const organizerHomeView_o = require('../view/organizer_v');
 
 const router_o = EXPRESS.Router();
 const ressourcePath_s = '/organizer';
@@ -21,9 +22,32 @@ const ressourcePath_s = '/organizer';
 
 router_o.get(ressourcePath_s, function (req_opl, res_ops) {
    let data_a = userData_o.get_all();
-   let markup_s = localUserView_o.list_px(data_a);
+   let markup_s = organizerHomeView_o.home_px(data_a);
    res_ops.send(markup_s);
 });
 
+router_o.get(ressourcePath_s+"/UserList" , function (req_opl, res_ops) {
+   let data_a = userData_o.get_all();
+   let markup_s = organizerHomeView_o.userList_px(data_a);
+   res_ops.send(markup_s);
+});
+
+router_o.get(ressourcePath_s+"/EventSetting", function (req_opl, res_ops) {
+   let data_a = localEventData_o.get_all();
+   let markup_s = organizerHomeView_o.eventSetting_px(data_a);
+   res_ops.send(markup_s);
+});
+
+router_o.get(ressourcePath_s+"/ProvideEvents" , function (req_opl, res_ops) {
+   let data_a = [userData_o.get_all(), localEventData_o.get_all()];
+   let markup_s = organizerHomeView_o.provideEvents_px(data_a);
+   res_ops.send(markup_s);
+});
+
+router_o.get(ressourcePath_s+"/Analyze", function (req_opl, res_ops) {
+   let data_a = localEventData_o.get_all();
+   let markup_s = organizerHomeView_o.analyze_px(data_a);
+   res_ops.send(markup_s);
+});
 module.exports = router_o;
 // EOF
