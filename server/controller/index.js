@@ -12,6 +12,7 @@ const MORGAN = require('morgan');
 
 const localEventController_o = require('./localevent_c');
 const userController_o = require('./user_c');
+const organizerController_o = require('./organizer_c');
 
 // Anwendungsrahmen einrichten und konfigurieren
 
@@ -30,6 +31,7 @@ app_o.use(MORGAN('dev'));
 
 app_o.use('/', userController_o);
 app_o.use('/', localEventController_o);
+app_o.use('/', organizerController_o);
 
 app_o.get('/', function (req_opl, res_ops) {
    // Startseite ausliefern
