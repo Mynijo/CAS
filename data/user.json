@@ -17,5 +17,14 @@
       "trip_id" : "1",
       "booked_events_l" : [],
       "sugg_events_l" : []
+   },
+   "3": {
+      "id_s": "3",
+      "name_s": "admin",
+      "pwd_s": "admin",
+      "role_s": "organizer",
+      "trip_id" : "",
+      "booked_events_l" : [],
+      "sugg_events_l" : []
    }
 }
