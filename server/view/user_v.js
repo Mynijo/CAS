@@ -18,8 +18,8 @@ class LocalEventView_cl {
     }
 
 
-    home_px(data_apl, data_user_apl) {
-        let markup_s = this.compiledUserSettingTemplate_p({ localUser_opl: data_user_apl, localEvent_opl: data_apl });
+    home_px(data_user_apl, event_data_apl) {
+        let markup_s = this.compiledUserSettingTemplate_p({ localUser_opl: data_user_apl, localEvent_opl: event_data_apl });
         return markup_s;
     }
 }
