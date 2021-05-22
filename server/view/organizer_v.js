@@ -22,7 +22,7 @@ class LocalEventView_cl {
         path_s = PATH.resolve(baseDir_s, 'client', 'templates', 'eventsettings.pug');
         this.compiledEventSettingTemplate_p = PUG.compileFile(path_s);
 
-        path_s = PATH.resolve(baseDir_s, 'client', 'templates', 'eventsettings.pug');
+        path_s = PATH.resolve(baseDir_s, 'client', 'templates', 'usersetting.pug');
         this.compiledUserSettingTemplate_p = PUG.compileFile(path_s);
 
         path_s = PATH.resolve(baseDir_s, 'client', 'templates', 'provideevents.pug');
@@ -42,14 +42,14 @@ class LocalEventView_cl {
         return markup_s;
     }
 
-    userSetting_px(data_apl) {
+    userSetting_px(data_opl) {
         let action_s;
         if (data_opl["id_s"] == "0") {
-           action_s = "create";
+            action_s = "create";
         } else {
-           action_s = "save";
+            action_s = "save";
         }
-        let markup_s = this.compiledUserSettingTemplate_p({action_s: action_s, localEvent_opl: data_opl});
+        let markup_s = this.compiledUserSettingTemplate_p({ action_s: action_s, localEvent_opl: data_opl });
         return markup_s;
     }
     eventSetting_px(data_apl) {

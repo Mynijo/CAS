@@ -42,20 +42,20 @@ router_o.post(ressourcePath_s, function(req_opl, res_ops) {
     }
 
 
-    router_o.post(ressourcePath_s+'/create/:id', function (req_opl, res_ops) {
-      let id_s = localEventData_o.add(req_opl.body);
-      res_ops.redirect('/organizer/UserList');
-   });
-   
-   router_o.post(ressourcePath_s+'/save/:id', function (req_opl, res_ops) {
-      localEventData_o.set(req_opl.params.id, req_opl.body);
-      res_ops.redirect('/organizer/UserList');
-   });
-   
-   router_o.post(ressourcePath_s+'/delete/:id', function (req_opl, res_ops) {
-      localEventData_o.del(req_opl.params.id);
-      res_ops.redirect('/organizer/UserList');
-   });
+    router_o.post(ressourcePath_s + '/create/:id', function(req_opl, res_ops) {
+        let id_s = userData_o.add(req_opl.body);
+        res_ops.redirect('/organizer/UserList');
+    });
+
+    router_o.post(ressourcePath_s + '/save/:id', function(req_opl, res_ops) {
+        userData_o.set_by_id(req_opl.body, req_opl.params.id);
+        res_ops.redirect('/organizer/UserList');
+    });
+
+    router_o.post(ressourcePath_s + '/delete/:id', function(req_opl, res_ops) {
+        userData_o.del(req_opl.params.id);
+        res_ops.redirect('/organizer/UserList');
+    });
 });
 
 module.exports = router_o;

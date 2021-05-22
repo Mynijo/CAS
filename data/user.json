@@ -14,7 +14,10 @@
         "pwd_s": "hdb",
         "role_s": "user",
         "trip_id": "1",
-        "booked_events_l": ["2", "1"],
+        "booked_events_l": [
+            "2",
+            "1"
+        ],
         "sugg_events_l": []
     },
     "2": {
@@ -34,5 +37,14 @@
         "trip_id": "",
         "booked_events_l": [],
         "sugg_events_l": []
+    },
+    "6": {
+        "id_s": "6",
+        "name_s": "default1",
+        "pwd_s": "default",
+        "role_s": "user",
+        "trip_id": "",
+        "booked_events_l": "",
+        "sugg_events_l": ""
     }
 }
