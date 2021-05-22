@@ -15,7 +15,7 @@ class LocalEventView_cl {
         let baseDir_s = baseDir_a.join(PATH.sep);
         let path_s = PATH.resolve(baseDir_s, 'client', 'templates', 'userhome.pug');
         this.compiledUserSettingTemplate_p = PUG.compileFile(path_s);
-        }
+    }
 
 
     home_px(data_apl, data_user_apl) {
