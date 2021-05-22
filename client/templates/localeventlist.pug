@@ -9,10 +9,11 @@ html(lang='de')
   body
     table
       tr
-        th= "Datum"
-        th= "Ort"
-        th= "Bezeichnung"
-        th= "Veranstalter"
+        th= "Date"
+        th= "Place"
+        th= "Description"
+        th= "Organizer"
+        td= "More Information"
       each localEvent_o in allLocalEvents_apl
         tr
           td= localEvent_o.date_s
@@ -21,5 +22,6 @@ html(lang='de')
           td= localEvent_o.orga_s
           td
             a(href=`/localevent/${localEvent_o.id_s}`)= localEvent_o.name_s
+
 
     a(href="/localevent/0" class="e-button")= "Hinzufügen"
