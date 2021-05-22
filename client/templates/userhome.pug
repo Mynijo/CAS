@@ -29,7 +29,7 @@ html(lang='de')
                     table
                         tr
                             th= "Suggested Events"
-                    each sugg_events_l in localEvent_opl.sugg_events_l
+                    each sugg_events_l in localUser_opl.sugg_events_l
                         tr
                             td= sugg_events_l + ', '
 
@@ -39,7 +39,8 @@ html(lang='de')
                             th= "Booked Events"
                     each booked_events_l in localUser_opl.booked_events_l
                         tr
-                            td= a(href=`/localevent/${booked_events_l}`) + ', '
+                            td
+                                a(href=`/localevent/${booked_events_l}`)= booked_events_l + ', '
 
                 div 
                     label="Cancel following event" 
