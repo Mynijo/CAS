@@ -6,7 +6,8 @@
         "role_s": "user",
         "trip_id": "",
         "booked_events_l": [],
-        "sugg_events_l": []
+        "sugg_events_l": [],
+        "new_option": ""
     },
     "1": {
         "id_s": "1",
@@ -18,7 +19,8 @@
             "2",
             "1"
         ],
-        "sugg_events_l": []
+        "sugg_events_l": [],
+        "new_option": ""
     },
     "2": {
         "id_s": "2",
@@ -27,7 +29,8 @@
         "role_s": "user",
         "trip_id": "1",
         "booked_events_l": [],
-        "sugg_events_l": []
+        "sugg_events_l": [],
+        "new_option": ""
     },
     "3": {
         "id_s": "3",
@@ -36,7 +39,8 @@
         "role_s": "organizer",
         "trip_id": "",
         "booked_events_l": [],
-        "sugg_events_l": []
+        "sugg_events_l": [],
+        "new_option": ""
     },
     "6": {
         "id_s": "6",
@@ -45,6 +49,7 @@
         "role_s": "user",
         "trip_id": "",
         "booked_events_l": "",
-        "sugg_events_l": ""
+        "sugg_events_l": "",
+        "new_option": ""
     }
 }

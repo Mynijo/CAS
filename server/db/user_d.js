@@ -47,6 +47,30 @@ class UserData_cl {
         return id_s;
     }
 
+    add_sugg(data_opl) {
+      if (id in this.allData_o) {
+         if(data_opl["new_option"] != "")
+         {
+            data_opl["sugg_events_l"].push(data_opl["new_option"]);
+            data_opl["new_option"] = "";
+         }
+         this.allData_o[id] = data_opl;
+         this.sync_p();
+     }
+  }
+
+   add_book(data_opl) {
+      if (id in this.allData_o) {
+         if(data_opl["new_option"] != "")
+         {
+            data_opl["booked_events_l"].push(data_opl["new_option"]);
+            data_opl["new_option"] = "";
+         }
+         this.allData_o[id] = data_opl;
+         this.sync_p();
+      }
+   }
+
     set_by_id(data_opl, id) {
         if (id in this.allData_o) {
             this.allData_o[id] = data_opl;
