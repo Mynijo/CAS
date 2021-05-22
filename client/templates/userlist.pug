@@ -14,10 +14,22 @@ body
         tr
             th= "Name"
             th= "Role"
+            th= ""
         each user_o in allLocalEvents_apl
             tr
                 td= user_o.name_s
                 td= user_o.Role
+                td 
+                    button(formaction=`/user/delete/${user_o.id_s}` formmethod="POST" class="e-button")= "Delete" 
+    form
+        div 
+            label="New User"
+        div 
+            label= "Name"
+            input(type="text" id="Name" name="name" value="" required)
+        div 
+            label="Passwort"
+            input(type="text" id="Password" name="password" value="" required)
+        div
+            button(formaction=`/user/create/0` formmethod="POST" class="e-button")= "Speichern" 
 
-
-    a(href="/organizer/0" class="e-button")= "Hinzufügen"

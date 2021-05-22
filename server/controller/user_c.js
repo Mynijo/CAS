@@ -42,17 +42,17 @@ router_o.post(ressourcePath_s, function(req_opl, res_ops) {
     }
 
 
-    router_o.post(ressourcePath_s+'/create/:id', function (req_opl, res_ops) {
-      let id_s = localEventData_o.add(req_opl.body);
-   });
-   
-   router_o.post(ressourcePath_s+'/save/:id', function (req_opl, res_ops) {
-      localEventData_o.set(req_opl.params.id, req_opl.body);
-   });
-   
-   router_o.post(ressourcePath_s+'/delete/:id', function (req_opl, res_ops) {
-      localEventData_o.del(req_opl.params.id);
-   });
+    router_o.post(ressourcePath_s + '/create/:id', function(req_opl, res_ops) {
+        let id_s = localEventData_o.add(req_opl.body);
+    });
+
+    router_o.post(ressourcePath_s + '/save/:id', function(req_opl, res_ops) {
+        localEventData_o.set(req_opl.params.id, req_opl.body);
+    });
+
+    router_o.post(ressourcePath_s + '/delete/:id', function(req_opl, res_ops) {
+        localEventData_o.del(req_opl.params.id);
+    });
 });
 
 module.exports = router_o;
