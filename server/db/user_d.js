@@ -33,7 +33,7 @@ class UserData_cl {
         return data_a;
     }
 
-    get_by_id_old(id) {
+    get_by_id(id) {
         for (let key_s in this.allData_o) {
             if (key_s == id) {
                 return this.allData_o[key_s];
@@ -42,7 +42,7 @@ class UserData_cl {
         return null;
     }
 
-    get_by_id (id) {
+    get_by_id_with_o_list (id) {
       let data = null;
       let booked_list = [];
       let sugg_list = [];
