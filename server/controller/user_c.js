@@ -9,6 +9,7 @@ const router_o = EXPRESS.Router();
 const ressourcePath_s = '/user';
 
 const userData_o = require('../db/user_d');
+const localEventData_o = require('../db/localevent_d');
 const UserHomeView_o = require('../view/user_v');
 
 router_o.get(ressourcePath_s, function(req_opl, res_ops) {
