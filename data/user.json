@@ -1,4 +1,13 @@
 {
+    "0": {
+        "id_s": "0",
+        "name_s": "default",
+        "pwd_s": "default",
+        "role_s": "user",
+        "trip_id": "",
+        "booked_events_l": [],
+        "sugg_events_l": []
+    },
     "1": {
         "id_s": "1",
         "name_s": "hdb",
@@ -7,7 +16,6 @@
         "trip_id": "1",
         "booked_events_l": [],
         "sugg_events_l": []
-
     },
     "2": {
         "id_s": "2",

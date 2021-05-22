@@ -1,7 +1,19 @@
 {
+   "0": {
+      "id_s": "0",
+      "name_s": "default",
+      "location_s": "default",
+      "date_s": "01.01.1972",
+      "start_time_s": "00:00",
+      "end_time_s": "00:00",
+      "price_s": "0.00",
+      "deadline_s": "01.01.2025",
+      "orga_s": "Yggdrasil",
+      "trip_id": "0"
+   },
    "1": {
       "id_s": "1",
-      "name_s" : "Bingo",
+      "name_s": "Bingo",
       "location_s": "BingoHouse",
       "date_s": "15.15.1915",
       "start_time_s": "16:00",
@@ -13,7 +25,7 @@
    },
    "2": {
       "id_s": "2",
-      "name_s" : "Waffle baking",
+      "name_s": "Waffle baking",
       "location_s": "E01",
       "date_s": "07.7.2021",
       "start_time_s": "12:00",
@@ -25,7 +37,7 @@
    },
    "3": {
       "id_s": "3",
-      "name_s" : "Painball",
+      "name_s": "Painball",
       "location_s": "U05",
       "date_s": "31.10.2021",
       "start_time_s": "22:00",
@@ -37,7 +49,7 @@
    },
    "4": {
       "id_s": "4",
-      "name_s" : "Speed Dating",
+      "name_s": "Speed Dating",
       "location_s": "Park",
       "date_s": "01.1.2021",
       "start_time_s": "18:00",
@@ -49,7 +61,7 @@
    },
    "5": {
       "id_s": "5",
-      "name_s" : "AC DC",
+      "name_s": "AC DC",
       "location_s": "Stadium",
       "date_s": "01.1.2024",
       "start_time_s": "15:00",
