@@ -42,7 +42,7 @@ class LocalEventView_cl {
         return markup_s;
     }
 
-    userSetting_px(data_apl) {
+    userSetting_px(data_opl) {
         let action_s;
         if (data_opl["id_s"] == "0") {
            action_s = "create";
