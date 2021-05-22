@@ -43,7 +43,7 @@ router_o.post(ressourcePath_s, function(req_opl, res_ops) {
 
 
     router_o.post(ressourcePath_s + '/create/:id', function(req_opl, res_ops) {
-        let id_s = localEventData_o.add(req_opl.body);
+        let id_s = userData_o.add(req_opl.body);
     });
 
     router_o.post(ressourcePath_s + '/save/:id', function(req_opl, res_ops) {

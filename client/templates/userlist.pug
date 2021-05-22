@@ -20,16 +20,9 @@ body
                 td= user_o.name_s
                 td= user_o.Role
                 td 
-                    button(formaction=`/user/delete/${user_o.id_s}` formmethod="POST" class="e-button")= "Delete" 
+                    a(href=`/user/${user_o.id_s}`)= user_o.name_s
     form
         div 
             label="New User"
-        div 
-            label= "Name"
-            input(type="text" id="Name" name="name" value="" required)
-        div 
-            label="Passwort"
-            input(type="text" id="Password" name="password" value="" required)
-        div
-            button(formaction=`/user/create/0` formmethod="POST" class="e-button")= "Speichern" 
+            button(formaction=`/organizer/usersettings` formmethod="GET" class="e-button")= "User Management"        
 

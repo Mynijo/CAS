@@ -1,11 +1,30 @@
 doctype html
 html(lang='de')
-    head
-        title= "Home"
-        meta(charset='utf-8')
-        meta(http-equiv='X-UA-Compatible' content='IE=edge')
-        meta(name='viewport' content='width=device-width, initial-scale=1')
-        link(rel='stylesheet' href='/styles/normalize.css')
-        link(rel='stylesheet' href='/styles/buttons.css')
-    body
-        button(formaction=`/organizer/userlist` formmethod="get" class="e-button")= "Speichern"
+  head
+    title= "Liste lokale Veranstaltungen"
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='/styles/list.css')
+    link(rel='stylesheet' href='/styles/buttons.css')
+    link(rel='stylesheet' href='/styles/labels.css')
+    link(rel='stylesheet' href='/styles/tables.css')
+  body
+    table
+      tr
+        th= "Date"
+        th= "Place"
+        th= "Description"
+        th= "Organizer"
+        td= "Edit"
+      each localEvent_o in allLocalEvents_apl
+        tr
+          td= localEvent_o.date_s
+          td= localEvent_o.location_s
+          td= localEvent_o.name_s
+          td= localEvent_o.orga_s
+          td
+            a(href=`/localevent/${localEvent_o.id_s}`)= localEvent_o.name_s
+
+
+    a(href="/localevent/0" class="e-button")= "Hinzufügen"
