@@ -46,59 +46,56 @@ class UserData_cl {
         this.sync_p();
         return id_s;
     }
-  
-    add_sugg(data_opl, id) {
-      if (id in this.allData_o) {
-          if (data_opl["new_option"] != "") {              
-              if (isEmpty(data_opl["sugg_events_l"])) {
-                  data_opl["sugg_events_l"] = [];
-              }
-              else {
-                data_opl["sugg_events_l"] = data_opl["sugg_events_l"].split(',')
-              }
-              if(!( data_opl["sugg_events_l"].includes(data_opl["new_option"]))) {
-                data_opl["sugg_events_l"].push(data_opl["new_option"]);
-              }
-              data_opl["new_option"] = "";
-          }
-          this.allData_o[id] = data_opl;
-          this.sync_p();
-      }
-  }  
 
-  del_sugg(data_opl, id) {
-      if (id in this.allData_o) {
-          if (data_opl["new_option"] != "") {              
-              if (isEmpty(data_opl["sugg_events_l"])) {
-                  data_opl["sugg_events_l"] = [];
-              }
-              else {
-                data_opl["sugg_events_l"] = data_opl["sugg_events_l"].split(',')
-              }
-              if(data_opl["sugg_events_l"].includes(data_opl["new_option"])) {
-                data_opl["sugg_events_l"].remove(data_opl["new_option"]);
-              }
-              data_opl["new_option"] = "";
-          }
-          this.allData_o[id] = data_opl;
-          this.sync_p();
-      }
-  }
+    add_sugg(data_opl, id) {
+        if (id in this.allData_o) {
+            if (data_opl["new_option"] != "") {
+                if (isEmpty(data_opl["sugg_events_l"])) {
+                    data_opl["sugg_events_l"] = [];
+                } else {
+                    data_opl["sugg_events_l"] = data_opl["sugg_events_l"].split(',')
+                }
+                if (!(data_opl["sugg_events_l"].includes(data_opl["new_option"]))) {
+                    data_opl["sugg_events_l"].push(data_opl["new_option"]);
+                }
+                data_opl["new_option"] = "";
+            }
+            this.allData_o[id] = data_opl;
+            this.sync_p();
+        }
+    }
+
+    del_sugg(data_opl, id) {
+        if (id in this.allData_o) {
+            if (data_opl["new_option"] != "") {
+                if (isEmpty(data_opl["sugg_events_l"])) {
+                    data_opl["sugg_events_l"] = [];
+                } else {
+                    data_opl["sugg_events_l"] = data_opl["sugg_events_l"].split(',')
+                }
+                if (data_opl["sugg_events_l"].includes(data_opl["new_option"])) {
+                    data_opl["sugg_events_l"].remove(data_opl["new_option"]);
+                }
+                data_opl["new_option"] = "";
+            }
+            this.allData_o[id] = data_opl;
+            this.sync_p();
+        }
+    }
 
     add_book(data_opl, id) {
         if (id in this.allData_o) {
-         if (data_opl["new_option"] != "") {              
-            if (isEmpty(data_opl["booked_events_l"])) {
-                data_opl["booked_events_l"] = [];
+            if (data_opl["new_option"] != "") {
+                if (isEmpty(data_opl["booked_events_l"])) {
+                    data_opl["booked_events_l"] = [];
+                } else {
+                    data_opl["booked_events_l"] = data_opl["booked_events_l"].split(',')
+                }
+                if (!(data_opl["booked_events_l"].includes(data_opl["new_option"]))) {
+                    data_opl["booked_events_l"].push(data_opl["new_option"]);
+                }
+                data_opl["new_option"] = "";
             }
-            else {
-              data_opl["booked_events_l"] = data_opl["booked_events_l"].split(',')
-            }
-            if(!( data_opl["booked_events_l"].includes(data_opl["new_option"]))) {
-              data_opl["booked_events_l"].push(data_opl["new_option"]);
-            }
-            data_opl["new_option"] = "";
-        }
             this.allData_o[id] = data_opl;
             this.sync_p();
         }
@@ -106,18 +103,17 @@ class UserData_cl {
 
     del_book(data_opl, id) {
         if (id in this.allData_o) {
-         if (data_opl["new_option"] != "") {              
-            if (isEmpty(data_opl["booked_events_l"])) {
-                data_opl["booked_events_l"] = [];
+            if (data_opl["new_option"] != "") {
+                if (isEmpty(data_opl["booked_events_l"])) {
+                    data_opl["booked_events_l"] = [];
+                } else {
+                    data_opl["booked_events_l"] = data_opl["booked_events_l"].split(',')
+                }
+                if (data_opl["booked_events_l"].includes(data_opl["new_option"])) {
+                    data_opl["booked_events_l"].remove(data_opl["new_option"]);
+                }
+                data_opl["new_option"] = "";
             }
-            else {
-              data_opl["booked_events_l"] = data_opl["booked_events_l"].split(',')
-            }
-            if(data_opl["booked_events_l"].includes(data_opl["new_option"])) {
-              data_opl["booked_events_l"].remove(data_opl["new_option"]);
-            }
-            data_opl["new_option"] = "";
-        }
             this.allData_o[id] = data_opl;
             this.sync_p();
         }
@@ -142,16 +138,14 @@ class UserData_cl {
         return result_b;
     }
 
-    get_total_booked_counter()
-    {
-      let data_a = [];
-      let counter = 0;
-      for (let key_s in this.allData_o) {
-          if (key_s != "0" && !isEmpty(this.allData_o[key_s]["booked_events_l"])) {
-            counter = counter +this.allData_o[key_s]["booked_events_l"].split(',').length;
-          }
-      }
-      return counter;
+    get_total_booked_counter() {
+        let counter = 0;
+        for (let key_s in this.allData_o) {
+            if (key_s != "0" && !isEmpty(this.allData_o[key_s]["booked_events_l"])) {
+                counter = counter + this.allData_o[key_s]["booked_events_l"].split(',').length;
+            }
+        }
+        return counter;
     }
 
 
@@ -171,18 +165,20 @@ class UserData_cl {
 }
 
 function isEmpty(obj) {
-   return Object.keys(obj).length === 0;
- }    
+    return Object.keys(obj).length === 0;
+}
 
- Array.prototype.remove = function() {
-   var what, a = arguments, L = a.length, ax;
-   while (L && this.length) {
-       what = a[--L];
-       while ((ax = this.indexOf(what)) !== -1) {
-           this.splice(ax, 1);
-       }
-   }
-   return this;
+Array.prototype.remove = function() {
+    var what, a = arguments,
+        L = a.length,
+        ax;
+    while (L && this.length) {
+        what = a[--L];
+        while ((ax = this.indexOf(what)) !== -1) {
+            this.splice(ax, 1);
+        }
+    }
+    return this;
 };
 
 module.exports = new UserData_cl();

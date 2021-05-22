@@ -24,18 +24,34 @@ html(lang='de')
         div
           label= "Role"
           input(type="text" id="role_s" name="role_s" value=`${localEvent_opl.role_s}` required)
-        
+
         div 
           label="Eventsuggestion"
           input(type="text" id="new_option" name="new_option" value=`${localEvent_opl.new_option}` required)
-
           input(type="hidden" id="trip_id" name="trip_id" value=`${localEvent_opl.trip_id}` required)
           input(type="hidden" id="booked_events_l" name="booked_events_l" value=`${localEvent_opl.booked_events_l}` required)    
-          input(type="hidden" id="sugg_events_l" name="sugg_events_l" value=`${localEvent_opl.sugg_events_l}` required)    
+          input(type="hidden" id="sugg_events_l" name="sugg_events_l" value=`${localEvent_opl.sugg_events_l}` required)
+
+
+        div 
+          table
+            tr
+              th= "Suggested Events"
+          each sugg_events_l in localEvent_opl.sugg_events_l
+            tr
+              td= sugg_events_l + ', '
+
+        div 
+          table
+            tr
+              th= "Booked Events"
+          each booked_events_l in localEvent_opl.booked_events_l
+            tr
+              td= booked_events_l + ', '
 
       div
-        button(formaction=`/organizer/userlist` formmethod="GET" class="e-button")= "Back"
-        button(formaction=`/user/${action_s}/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Save"
-        button(formaction=`/user/delete/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Delete"
-        button(formaction=`/user/add_sugg/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Add Suggestion"
+        button(formaction=`/organizer/userlist` formmethod="GET" class="e-button")= "Back" 
+        button(formaction=`/user/${action_s}/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Save" 
+        button(formaction=`/user/delete/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Delete" 
+        button(formaction=`/user/add_sugg/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Add Suggestion" 
         button(formaction=`/user/del_sugg/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Del Suggestion"

@@ -52,7 +52,8 @@
       "trip_id": "",
       "booked_events_l": "",
       "sugg_events_l": [
-         "1"
+         "1",
+         "2"
       ]
    }
 }
