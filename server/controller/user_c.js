@@ -45,7 +45,7 @@ router_o.post(ressourcePath_s, function(req_opl, res_ops) {
 
 router_o.get(ressourcePath_s + "/home/:id", function(req_opl, res_ops) {
     let data_a = userData_o.get_by_id(req_opl.params.id);
-    let markup_s = UserHomeView_o.userSetting_px(data_a);
+    let markup_s = UserHomeView_o.home_px(data_a);
     res_ops.send(markup_s);
 });
 
