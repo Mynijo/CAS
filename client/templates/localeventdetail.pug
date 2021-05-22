@@ -3,48 +3,50 @@ html(lang='de')
   head
     title= "Lokale Veranstaltung"
     meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', href='/styles/normalize.css')
-    link(rel='stylesheet', href='/styles/detail.css')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='/styles/normalize.css')
+    link(rel='stylesheet' href='/styles/detail.css')
+    link(rel='stylesheet' href='/styles/buttons.css')
+    link(rel='stylesheet' href='/styles/labels.css')
   body
     form
       input(type="hidden" id="id_s" name="id_s" value=`${localEvent_opl.id_s}`)
       div
-         div
-           label= "Date"
-           input(type="text" id="date_s" name="date_s" value=`${localEvent_opl.date_s}` required autofocus)
+        div
+          label= "Date"
+          input(type="text" id="date_s" name="date_s" value=`${localEvent_opl.date_s}` required autofocus)
 
-         div
-            label= "Place"
-            input(type="text" id="location_s" name="location_s" value=`${localEvent_opl.location_s}` required)
+        div
+          label= "Place"
+          input(type="text" id="location_s" name="location_s" value=`${localEvent_opl.location_s}` required)
 
-         div
-            label= "Description"
-            input(type="text" id="name_s" name="name_s" value=`${localEvent_opl.name_s}` required)
+        div
+          label= "Description"
+          input(type="text" id="name_s" name="name_s" value=`${localEvent_opl.name_s}` required)
 
-         div
-            label= "Organizer"
-            input(type="text" id="orga_s" name="orga_s" value=`${localEvent_opl.orga_s}` required)
+        div
+          label= "Organizer"
+          input(type="text" id="orga_s" name="orga_s" value=`${localEvent_opl.orga_s}` required)
 
-         div
-            label= "StartTime"
-            input(type="text" id="start_time_s" name="start_time_s" value=`${localEvent_opl.start_time_s}` required)
+        div
+          label= "StartTime"
+          input(type="text" id="start_time_s" name="start_time_s" value=`${localEvent_opl.start_time_s}` required)
 
-         div
-            label= "End Time"
-            input(type="text" id="end_time_s" name="end_time_s" value=`${localEvent_opl.end_time_s}` required)
+        div
+          label= "End Time"
+          input(type="text" id="end_time_s" name="end_time_s" value=`${localEvent_opl.end_time_s}` required)
 
-         div
-            label= "Price"
-            input(type="text" id="price_s" name="price_s" value=`${localEvent_opl.price_s}` required)
+        div
+          label= "Price"
+          input(type="text" id="price_s" name="price_s" value=`${localEvent_opl.price_s}` required)
 
-         div
-            label= "Time to book"
-            input(type="text" id="deadline_s" name="deadline_s" value=`${localEvent_opl.deadline_s}` required)
+        div
+          label= "Time to book"
+          input(type="text" id="deadline_s" name="deadline_s" value=`${localEvent_opl.deadline_s}` required)
 
-            
+
       div
-         a(href="/localevent" class="e-button")= "Zurück"
-         button(formaction=`/localevent/${action_s}/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Speichern"
-         button(formaction=`/localevent/delete/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Löschen"
+        a(href="/localevent" class="e-button")= "Zurück"
+        button(formaction=`/localevent/${action_s}/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Speichern"
+        button(formaction=`/localevent/delete/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Löschen"

@@ -1,80 +1,74 @@
 /* generell border-box-Modell verwenden */
-*, *::after, *::before {
-   box-sizing: border-box;
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
 }
 
 body {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   width: 100vw;
-   height: 100vh;
-   margin: 0;
-   padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
+
 body {
-   font:normal 1.1em/130% sans-serif;
+    font: normal 1.1em/130% sans-serif;
 }
 
 form {
-   border: 1px solid lightsteelblue;
-   padding: 20px;
-   width: 600px;
-}
-form > div:first-of-type {
-   display: flex;
-   flex-direction: column;
-}
-form > div:first-of-type > div {
-   margin-top: 15px;
-}
-form > div:first-of-type > div {
-   display: flex;
-   flex-direction: row;
-   height: 30px;
-}
-form > div:first-of-type > div > label {
-   width: 150px;
-   height: 30px;
-   line-height: 30px;
-   text-align: right;
-   margin-right: 20px;
-}
-form > div:first-of-type > div > input {
-   flex: 1;
-   height: 30px;
-   line-height: 30px;
+    border: 1px solid lightsteelblue;
+    padding: 20px;
+    width: 600px;
 }
 
-form > div:last-child {
-   margin-top: 10px;
-   height: 50px;
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   align-items: center;
+form>div:first-of-type {
+    display: flex;
+    flex-direction: column;
 }
 
-label {
-   margin-bottom: 5px;
-   font-weight: bold;
+form>div:first-of-type>div {
+    margin-top: 15px;
 }
+
+form>div:first-of-type>div {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+}
+
+form>div:first-of-type>div>label {
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+form>div:first-of-type>div>input {
+    flex: 1;
+    height: 30px;
+    line-height: 30px;
+}
+
+form>div:last-child {
+    margin-top: 10px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 input {
-   border: none;
-   border-bottom: 1px solid #F0F0F0;
+    border: none;
+    border-bottom: 1px solid #F0F0F0;
 }
-.e-button {
-   color: blue;
-   background-color: lightsteelblue;
-   border: 1px solid blue;
-   height: 40px;
-   width: 100px;
-   margin: 10px;
-}
-a.e-button, a.e-button:visited {
-   line-height: 40px;
-   text-align: center;
-   text-decoration: none;
-}
+
+
 /* EOF */

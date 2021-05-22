@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <title>SWI / Schritt 1</title>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" type="text/css" href="styles/main.css" />
-   </head>
-   <body>
-      <h1>Anmeldung</h1>
-      <form action="/user/" method="POST">
-         <div>
+
+<head>
+    <title>SWI / Schritt 1</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <link rel="stylesheet" type="text/css" href="styles/buttons.css" />
+</head>
+
+<body>
+    <h1>Anmeldung</h1>
+    <form action="/user/" method="POST">
+        <div>
             <label>Benutzer</label>
             <input type="text" placeholder="Bitte geben Sie die Benutzerbezeichnung ein" id="user" name="user" required autofocus />
 
             <label>Kennwort</label>
             <input type="password" placeholder="Bitte geben Sie das Kennwort ein" id="password" name="password" required />
-         </div>
-         <div>
+        </div>
+        <div>
             <button type="submit">Anmelden</button>
-         </div>
-      </form>
-   </body>
+        </div>
+    </form>
+</body>
+
 </html>
