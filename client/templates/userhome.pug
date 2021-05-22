@@ -11,25 +11,25 @@ html(lang='de')
         link(rel='stylesheet' href='/styles/labels.css')
     body
         form
-            input(type="hidden" id="id_s" name="id_s" value=`${localEvent_opl.id_s}`)
+            input(type="hidden" id="id_s" name="id_s" value=`${localUser_opl.id_s}`)
             div
                 div
                     label= "Name"
-                    input(type="text" id="name_s" name="name_s" value=`${localEvent_opl.name_s}` required autofocus)
+                    input(type="text" id="name_s" name="name_s" value=`${localUser_opl.name_s}` required autofocus)
 
                 div
                     label= "Password"
-                    input(type="text" id="pwd_s" name="pwd_s" value=`${localEvent_opl.pwd_s}` required)
+                    input(type="text" id="pwd_s" name="pwd_s" value=`${localUser_opl.pwd_s}` required)
 
                 div
                     label= "Role"
-                    input(type="text" id="role_s" name="role_s" value=`${localEvent_opl.role_s}` required)
+                    input(type="text" id="role_s" name="role_s" value=`${localUser_opl.role_s}` required)
 
                 div 
                     table
                         tr
                             th= "Suggested Events"
-                    each sugg_events_l in localEvent_opl.sugg_events_l
+                    each sugg_events_l in localUser_opl.sugg_events_l
                         tr
                             td= sugg_events_l + ', '
 
@@ -37,20 +37,20 @@ html(lang='de')
                     table
                         tr
                             th= "Booked Events"
-                    each booked_events_l in localEvent_opl.booked_events_l
+                    each booked_events_l in localUser_opl.booked_events_l
                         tr
-                            td= a(href=`/localevent/${booked_events_l}`)= localEvent_opl.name_s + ', '
+                            td= a(href=`/localevent/${booked_events_l}`) + ', '
 
                 div 
                     label="Cancel following event" 
-                    input(type="text" id="new_option" name="new_option" value=`${localEvent_opl.new_option}` required)
-                    button(formaction=`/user/del_book/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Cancel" 
+                    input(type="text" id="new_option" name="new_option" value=`${localUser_opl.new_option}` required)
+                    button(formaction=`/user/del_book/${localUser_opl.id_s}` formmethod="POST" class="e-button")= "Cancel" 
 
-                    input(type="hidden" id="trip_id" name="trip_id" value=`${localEvent_opl.trip_id}` required)
-                    input(type="hidden" id="booked_events_l" name="booked_events_l" value=`${localEvent_opl.booked_events_l}` required)    
-                    input(type="hidden" id="sugg_events_l" name="sugg_events_l" value=`${localEvent_opl.sugg_events_l}` required)
+                    input(type="hidden" id="trip_id" name="trip_id" value=`${localUser_opl.trip_id}` required)
+                    input(type="hidden" id="booked_events_l" name="booked_events_l" value=`${localUser_opl.booked_events_l}` required)    
+                    input(type="hidden" id="sugg_events_l" name="sugg_events_l" value=`${localUser_opl.sugg_events_l}` required)
 
             div
                 button(formaction=`/organizer/userlist` formmethod="GET" class="e-button")= "Back" 
-                button(formaction=`/user/${action_s}/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Save" 
-                button(formaction=`/user/delete/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Delete" 
+                button(formaction=`/user/${action_s}/${localUser_opl.id_s}` formmethod="POST" class="e-button")= "Save" 
+                button(formaction=`/user/delete/${localUser_opl.id_s}` formmethod="POST" class="e-button")= "Delete" 
