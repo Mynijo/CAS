@@ -32,6 +32,12 @@ router_o.get(ressourcePath_s + "/UserList", function(req_opl, res_ops) {
     res_ops.send(markup_s);
 });
 
+router_o.get(ressourcePath_s + "/UserSetting/:id", function(req_opl, res_ops) {
+    let data_a = userData_o.get_by_id(req_opl.params.id);
+    let markup_s = organizerHomeView_o.userSetting_px(data_a);
+    res_ops.send(markup_s);
+});
+
 router_o.get(ressourcePath_s + "/EventSettings", function(req_opl, res_ops) {
     let data_a = localEventData_o.get_all();
     let markup_s = organizerHomeView_o.eventSetting_px(data_a);
@@ -49,5 +55,7 @@ router_o.get(ressourcePath_s + "/Analyze", function(req_opl, res_ops) {
     let markup_s = organizerHomeView_o.analyze_px(data_a);
     res_ops.send(markup_s);
 });
+
+
 module.exports = router_o;
 // EOF
