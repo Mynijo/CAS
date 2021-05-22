@@ -18,7 +18,7 @@ class LocalEventView_cl {
 
         path_s = PATH.resolve(baseDir_s, 'client', 'templates', 'localeventuserinformation.pug');
         this.compiledlocaleventuserinformationTemplate_p = PUG.compileFile(path_s);
-        
+
     }
 
 
