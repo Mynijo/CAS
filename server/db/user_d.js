@@ -48,26 +48,46 @@ class UserData_cl {
     }
 
     add_sugg(data_opl, id) {
-        if (id in this.allData_o) {
-            if (data_opl["new_option"] != "") {
-                data_opl["sugg_events_l"].push(data_opl["new_option"]);
-                data_opl["new_option"] = "";
+      if (id in this.allData_o) {
+         if(data_opl["new_option"] != "")
+         {
+            data_opl["sugg_events_l"].push(data_opl["new_option"]);
+            data_opl["new_option"] = "";
+         }
+         this.allData_o[id] = data_opl;
+         this.sync_p();
+     }
+  }
+      if (id in this.allData_o) {
+         if(data_opl["new_option"] != "")
+         {
+            if(data_opl["sugg_events_l"] == "")
+            {
+               data_opl["sugg_events_l"] = [];
             }
-            this.allData_o[id] = data_opl;
-            this.sync_p();
-        }
-    }
+            data_opl["sugg_events_l"].push(data_opl["new_option"]);
+            data_opl["new_option"] = "";
+         }
+         this.allData_o[id] = data_opl;
+         this.sync_p();
+     }
+  }
 
-    add_book(data_opl, id) {
-        if (id in this.allData_o) {
-            if (data_opl["new_option"] != "") {
-                data_opl["booked_events_l"].push(data_opl["new_option"]);
-                data_opl["new_option"] = "";
+   add_book(data_opl, id) {
+      if (id in this.allData_o) {
+         if(data_opl["new_option"] != "")
+         {
+            if(data_opl["booked_events_l"] == "")
+            {
+               data_opl["booked_events_l"] = [];
             }
-            this.allData_o[id] = data_opl;
-            this.sync_p();
-        }
-    }
+            data_opl["booked_events_l"].push(data_opl["new_option"]);
+            data_opl["new_option"] = "";
+         }
+         this.allData_o[id] = data_opl;
+         this.sync_p();
+      }
+   }
 
     set_by_id(data_opl, id) {
         if (id in this.allData_o) {
