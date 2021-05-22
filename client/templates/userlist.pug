@@ -1,0 +1,23 @@
+doctype html
+html(lang='de')
+    head
+        title= "Home"
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        link(rel='stylesheet' href='/styles/list.css')
+    link(rel='stylesheet' href='/styles/buttons.css')
+    link(rel='stylesheet' href='/styles/labels.css')
+    link(rel='stylesheet' href='/styles/tables.css')       
+body
+    table
+        tr
+            th= "Name"
+            th= "Role"
+        each user_o in allLocalEvents_apl
+            tr
+                td= user_o.name_s
+                td= user_o.Role
+
+
+    a(href="/organizer/0" class="e-button")= "Hinzufügen"

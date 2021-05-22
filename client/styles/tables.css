@@ -1,0 +1,16 @@
+table {
+    border: 1px solid gray;
+    padding: 20px;
+    width: 700px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid gray;
+}
+
+td {
+    height: 30px;
+    padding: 3px;
+}
