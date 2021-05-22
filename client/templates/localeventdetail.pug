@@ -47,6 +47,8 @@ html(lang='de')
 
 
       div
-        a(href="/localevent" class="e-button")= "Zurück"
-        button(formaction=`/localevent/${action_s}/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Speichern"
-        button(formaction=`/localevent/delete/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Löschen"
+        a(href="/localevent" class="e-button")= "Back"
+        button(formaction=`/localevent/${action_s}/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Save"
+        button(formaction=`/localevent/delete/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Delete"
+
+

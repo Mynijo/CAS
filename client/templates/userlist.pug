@@ -23,6 +23,6 @@ body
                     a(href=`/organizer/usersetting/${user_o.id_s}`)= user_o.name_s
     form
         div 
-            label="New User"
+            button(formaction=`/organizer/` formmethod="GET" class="e-button")= "Back"
             button(formaction=`/organizer/usersetting/0` formmethod="GET" class="e-button")= "New User"        
 
