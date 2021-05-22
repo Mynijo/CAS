@@ -32,6 +32,7 @@ router_o.get(ressourcePathId_s, function (req_opl, res_ops) {
    res_ops.send(markup_s);
 });
 
+
 router_o.post(ressourcePath_s+'/create/:id', function (req_opl, res_ops) {
    let id_s = localEventData_o.add(req_opl.body);
    res_ops.redirect('/localevent/'+id_s);

@@ -30,12 +30,11 @@ class LocalEventData_cl {
    }
 
    get_by_id (id) {
-      for (let key_s in this.allData_o) {
-         if (key_s == id) {
-            return this.allData_o[key_s];
-         }
+      let data_o = null;
+      if (id in this.allData_o) {
+         data_o = this.allData_o[id];
       }
-      return null;
+      return data_o;
    }
 
    add (data_opl) {
