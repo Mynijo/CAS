@@ -8,10 +8,9 @@ html(lang='de')
         link(rel='stylesheet' href='/styles/normalize.css')
         link(rel='stylesheet' href='/styles/buttons.css')
     body
-        button(formaction=`/organizer/userlist` formmethod="get" class="e-button")= "Speichern"
 
     form
       div
         div
-          label= "Name"
+          label= "Number of booked events"
           input(type="number" id="name_s" name="name_s" value=`${allLocalEvents_apl}` required autofocus)
