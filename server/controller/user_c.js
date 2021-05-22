@@ -12,6 +12,8 @@ const userData_o = require('../db/user_d');
 const localEventData_o = require('../db/localevent_d');
 const UserHomeView_o = require('../view/user_v');
 
+let currentUserId_s = "";
+
 router_o.get(ressourcePath_s, function(req_opl, res_ops) {
     // nur zum Ausprobieren der verschiedenen Möglichkeiten, die Pfade beim Routing anzugeben
     res_ops.redirect("/");
@@ -19,7 +21,7 @@ router_o.get(ressourcePath_s, function(req_opl, res_ops) {
 
 router_o.post(ressourcePath_s, function(req_opl, res_ops) {
     let allUser_o = userData_o.get_all();
-    let currentUserId_s = "";
+    
     let found_b = false;
     let user_o = req_opl.body;
     let activeUser;
@@ -43,13 +45,20 @@ router_o.post(ressourcePath_s, function(req_opl, res_ops) {
     } else {
         res_ops.redirect('/');
     }
-    currentUserId_s = activeUser.id_s;
+    this.currentUserId_s = activeUser.id_s;
 });
 
 router_o.get(ressourcePath_s + "/home/:id", function(req_opl, res_ops) {
     let data_a = userData_o.get_by_id(req_opl.params.id);
     let dataEvent_a = localEventData_o.get_all();
     let markup_s = UserHomeView_o.home_px(data_a, dataEvent_a);
+    res_ops.send(markup_s);
+});
+
+router_o.get(ressourcePath_s + "/localeventuserinformation/:id", function(req_opl, res_ops) {
+    let data_a = userData_o.get_by_id(this.currentUserId_s);
+    let dataEvent_a = localEventData_o.get_by_id(req_opl.params.id);
+    let markup_s = UserHomeView_o.localeventuserinformation_px(data_a, dataEvent_a);
     res_ops.send(markup_s);
 });
 

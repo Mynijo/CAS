@@ -15,10 +15,19 @@ class LocalEventView_cl {
         let baseDir_s = baseDir_a.join(PATH.sep);
         let path_s = PATH.resolve(baseDir_s, 'client', 'templates', 'userhome.pug');
         this.compiledUserSettingTemplate_p = PUG.compileFile(path_s);
+
+        path_s = PATH.resolve(baseDir_s, 'client', 'templates', 'localeventuserinformation.pug');
+        this.compiledlocaleventuserinformationTemplate_p = PUG.compileFile(path_s);
+        
     }
 
 
     home_px(data_user_apl, event_data_apl) {
+        let markup_s = this.compiledUserSettingTemplate_p({ localUser_opl: data_user_apl, localEvent_opl: event_data_apl });
+        return markup_s;
+    }
+
+    localeventuserinformation_px(data_user_apl, event_data_apl) {
         let markup_s = this.compiledUserSettingTemplate_p({ localUser_opl: data_user_apl, localEvent_opl: event_data_apl });
         return markup_s;
     }
