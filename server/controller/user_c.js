@@ -9,6 +9,7 @@ const router_o = EXPRESS.Router();
 const ressourcePath_s = '/user';
 
 const userData_o = require('../db/user_d');
+const UserHomeView_o = require('../view/user_v');
 
 router_o.get(ressourcePath_s, function(req_opl, res_ops) {
     // nur zum Ausprobieren der verschiedenen Möglichkeiten, die Pfade beim Routing anzugeben
@@ -32,7 +33,7 @@ router_o.post(ressourcePath_s, function(req_opl, res_ops) {
     }
     if (found_b) {
         if (activeUser.role_s == "user") {
-            res_ops.redirect('/localevent/');
+            res_ops.redirect('/user/home/' + activeUser.id_s);
         }
         if (activeUser.role_s == "organizer") {
             res_ops.redirect('/organizer/');
@@ -40,6 +41,12 @@ router_o.post(ressourcePath_s, function(req_opl, res_ops) {
     } else {
         res_ops.redirect('/');
     }
+});
+
+router_o.get(ressourcePath_s + "/home/:id", function(req_opl, res_ops) {
+    let data_a = userData_o.get_by_id(req_opl.params.id);
+    let markup_s = UserHomeView_o.userSetting_px(data_a);
+    res_ops.send(markup_s);
 });
 
 router_o.post(ressourcePath_s + '/add_sugg/:id', function(req_opl, res_ops) {
