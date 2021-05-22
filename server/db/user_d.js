@@ -46,14 +46,19 @@ class UserData_cl {
         this.sync_p();
         return id_s;
     }
-
+  
     add_sugg(data_opl, id) {
         if (id in this.allData_o) {
-            if (data_opl["new_option"] != "") {
-                if (data_opl["sugg_events_l"]) {
+            if (data_opl["new_option"] != "") {              
+                if (isEmpty(data_opl["sugg_events_l"])) {
                     data_opl["sugg_events_l"] = [];
                 }
-                data_opl["sugg_events_l"].push(data_opl["new_option"]);
+                else {
+                  data_opl["sugg_events_l"] = data_opl["sugg_events_l"].split(',')
+                }
+                if(!( data_opl["sugg_events_l"].includes(data_opl["new_option"]))) {
+                  data_opl["sugg_events_l"].push(data_opl["new_option"]);
+                }
                 data_opl["new_option"] = "";
             }
             this.allData_o[id] = data_opl;
@@ -63,13 +68,18 @@ class UserData_cl {
 
     add_book(data_opl, id) {
         if (id in this.allData_o) {
-            if (data_opl["new_option"] != "") {
-                if (data_opl["booked_events_l"] == "") {
-                    data_opl["booked_events_l"] = [];
-                }
-                data_opl["booked_events_l"].push(data_opl["new_option"]);
-                data_opl["new_option"] = "";
+         if (data_opl["new_option"] != "") {              
+            if (isEmpty(data_opl["booked_events_l"])) {
+                data_opl["booked_events_l"] = [];
             }
+            else {
+              data_opl["booked_events_l"] = data_opl["booked_events_l"].split(',')
+            }
+            if(!( data_opl["booked_events_l"].includes(data_opl["new_option"]))) {
+              data_opl["booked_events_l"].push(data_opl["new_option"]);
+            }
+            data_opl["new_option"] = "";
+        }
             this.allData_o[id] = data_opl;
             this.sync_p();
         }
@@ -109,6 +119,10 @@ class UserData_cl {
     }
 
 }
+
+function isEmpty(obj) {
+   return Object.keys(obj).length === 0;
+ }    
 
 module.exports = new UserData_cl();
 // EOF
