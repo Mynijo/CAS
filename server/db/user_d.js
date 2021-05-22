@@ -48,23 +48,42 @@ class UserData_cl {
     }
   
     add_sugg(data_opl, id) {
-        if (id in this.allData_o) {
-            if (data_opl["new_option"] != "") {              
-                if (isEmpty(data_opl["sugg_events_l"])) {
-                    data_opl["sugg_events_l"] = [];
-                }
-                else {
-                  data_opl["sugg_events_l"] = data_opl["sugg_events_l"].split(',')
-                }
-                if(!( data_opl["sugg_events_l"].includes(data_opl["new_option"]))) {
-                  data_opl["sugg_events_l"].push(data_opl["new_option"]);
-                }
-                data_opl["new_option"] = "";
-            }
-            this.allData_o[id] = data_opl;
-            this.sync_p();
-        }
-    }
+      if (id in this.allData_o) {
+          if (data_opl["new_option"] != "") {              
+              if (isEmpty(data_opl["sugg_events_l"])) {
+                  data_opl["sugg_events_l"] = [];
+              }
+              else {
+                data_opl["sugg_events_l"] = data_opl["sugg_events_l"].split(',')
+              }
+              if(!( data_opl["sugg_events_l"].includes(data_opl["new_option"]))) {
+                data_opl["sugg_events_l"].push(data_opl["new_option"]);
+              }
+              data_opl["new_option"] = "";
+          }
+          this.allData_o[id] = data_opl;
+          this.sync_p();
+      }
+  }  
+
+  del_sugg(data_opl, id) {
+      if (id in this.allData_o) {
+          if (data_opl["new_option"] != "") {              
+              if (isEmpty(data_opl["sugg_events_l"])) {
+                  data_opl["sugg_events_l"] = [];
+              }
+              else {
+                data_opl["sugg_events_l"] = data_opl["sugg_events_l"].split(',')
+              }
+              if(data_opl["sugg_events_l"].includes(data_opl["new_option"])) {
+                data_opl["sugg_events_l"].remove(data_opl["new_option"]);
+              }
+              data_opl["new_option"] = "";
+          }
+          this.allData_o[id] = data_opl;
+          this.sync_p();
+      }
+  }
 
     add_book(data_opl, id) {
         if (id in this.allData_o) {
@@ -77,6 +96,25 @@ class UserData_cl {
             }
             if(!( data_opl["booked_events_l"].includes(data_opl["new_option"]))) {
               data_opl["booked_events_l"].push(data_opl["new_option"]);
+            }
+            data_opl["new_option"] = "";
+        }
+            this.allData_o[id] = data_opl;
+            this.sync_p();
+        }
+    }
+
+    del_book(data_opl, id) {
+        if (id in this.allData_o) {
+         if (data_opl["new_option"] != "") {              
+            if (isEmpty(data_opl["booked_events_l"])) {
+                data_opl["booked_events_l"] = [];
+            }
+            else {
+              data_opl["booked_events_l"] = data_opl["booked_events_l"].split(',')
+            }
+            if(data_opl["booked_events_l"].includes(data_opl["new_option"])) {
+              data_opl["booked_events_l"].remove(data_opl["new_option"]);
             }
             data_opl["new_option"] = "";
         }
@@ -123,6 +161,17 @@ class UserData_cl {
 function isEmpty(obj) {
    return Object.keys(obj).length === 0;
  }    
+
+ Array.prototype.remove = function() {
+   var what, a = arguments, L = a.length, ax;
+   while (L && this.length) {
+       what = a[--L];
+       while ((ax = this.indexOf(what)) !== -1) {
+           this.splice(ax, 1);
+       }
+   }
+   return this;
+};
 
 module.exports = new UserData_cl();
 // EOF

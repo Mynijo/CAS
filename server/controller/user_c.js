@@ -46,8 +46,18 @@ router_o.post(ressourcePath_s, function(req_opl, res_ops) {
         res_ops.redirect('/organizer/UserList');
     });
 
+    router_o.post(ressourcePath_s + '/del_sugg/:id', function(req_opl, res_ops) {
+        let id_s = userData_o.del_sugg(req_opl.body, req_opl.params.id);
+        res_ops.redirect('/organizer/UserList');
+    });
+
     router_o.post(ressourcePath_s + '/add_book/:id', function(req_opl, res_ops) {
         let id_s = userData_o.add_book(req_opl.body, req_opl.params.id);
+        res_ops.redirect('/organizer/UserList');
+    });
+
+    router_o.post(ressourcePath_s + '/del_book/:id', function(req_opl, res_ops) {
+        let id_s = userData_o.del_book(req_opl.body, req_opl.params.id);
         res_ops.redirect('/organizer/UserList');
     });
 
