@@ -51,7 +51,7 @@ router_o.get(ressourcePath_s + "/ProvideEvents", function(req_opl, res_ops) {
 });
 
 router_o.get(ressourcePath_s + "/Analyze", function(req_opl, res_ops) {
-    let data_a = localEventData_o.get_all();
+    let data_a = userData_o.total_booked_counter();
     let markup_s = organizerHomeView_o.analyze_px(data_a);
     res_ops.send(markup_s);
 });

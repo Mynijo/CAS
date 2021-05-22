@@ -142,6 +142,18 @@ class UserData_cl {
         return result_b;
     }
 
+    get_total_booked_counter()
+    {
+      let data_a = [];
+      let counter = 0;
+      for (let key_s in this.allData_o) {
+          if (key_s != "0" && !isEmpty(this.allData_o[key_s]["booked_events_l"])) {
+            counter = counter +this.allData_o[key_s]["booked_events_l"].split(',').length;
+          }
+      }
+      return counter;
+    }
+
 
     sync_p() {
         let data_s = JSON.stringify(this.allData_o, null, 3);
