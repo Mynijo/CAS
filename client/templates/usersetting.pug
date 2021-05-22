@@ -1,0 +1,34 @@
+doctype html
+html(lang='de')
+  head
+    title= "Lokale Veranstaltung"
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='/styles/normalize.css')
+    link(rel='stylesheet' href='/styles/detail.css')
+    link(rel='stylesheet' href='/styles/buttons.css')
+    link(rel='stylesheet' href='/styles/labels.css')
+  body
+    form
+      input(type="hidden" id="id_s" name="id_s" value=`${localEvent_opl.id_s}`)
+      div
+        div
+          label= "Name"
+          input(type="text" id="name_s" name="name_s" value=`${localEvent_opl.name_s}` required autofocus)
+
+        div
+          label= "Password"
+          input(type="text" id="pwd_s" name="pwd_s" value=`${localEvent_opl.pwd_s}` required)
+
+        div
+          label= "Role"
+          input(type="text" id="role_s" name="role_s" value=`${localEvent_opl.role_s}` required)
+          input(type="hidden" id="trip_id" name="trip_id" value=`${localEvent_opl.trip_id}` required)
+          input(type="hidden" id="booked_events_l" name="booked_events_l" value=`${localEvent_opl.booked_events_l}` required)    
+          input(type="hidden" id="sugg_events_l" name="sugg_events_l" value=`${localEvent_opl.sugg_events_l}` required)    
+
+      div
+        button(formaction=`/organizer/userlist` formmethod="GET" class="e-button")= "Back"
+        button(formaction=`/user/${action_s}/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Save"
+        button(formaction=`/user/delete/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Delete"
