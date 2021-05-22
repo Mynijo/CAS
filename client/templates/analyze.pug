@@ -5,12 +5,12 @@ html(lang='de')
         meta(charset='utf-8')
         meta(http-equiv='X-UA-Compatible' content='IE=edge')
         meta(name='viewport' content='width=device-width, initial-scale=1')
-        link(rel='stylesheet' href='/styles/list.css')
+        link(rel='stylesheet' href='/styles/normalize.css')
         link(rel='stylesheet' href='/styles/buttons.css')
-        link(rel='stylesheet' href='/styles/labels.css')
-        link(rel='stylesheet' href='/styles/tables.css')       
-body    
+    body
+
     form
-        div 
-            label= "Number of booked events"
-            input(type="text" id="bookedEvents", name="bookedEvents" value=`${bookedEvents}`)
+      div
+        div
+          label= "Number of booked events"
+          input(type="number" id="name_s" name="name_s" value=`${allLocalEvents_apl}` required autofocus)
