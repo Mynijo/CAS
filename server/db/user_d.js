@@ -51,6 +51,10 @@ class UserData_cl {
       if (id in this.allData_o) {
          if(data_opl["new_option"] != "")
          {
+            if(data_opl["sugg_events_l"] == "")
+            {
+               data_opl["sugg_events_l"] = [];
+            }
             data_opl["sugg_events_l"].push(data_opl["new_option"]);
             data_opl["new_option"] = "";
          }
@@ -63,6 +67,10 @@ class UserData_cl {
       if (id in this.allData_o) {
          if(data_opl["new_option"] != "")
          {
+            if(data_opl["booked_events_l"] == "")
+            {
+               data_opl["booked_events_l"] = [];
+            }
             data_opl["booked_events_l"].push(data_opl["new_option"]);
             data_opl["new_option"] = "";
          }
