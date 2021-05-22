@@ -1,57 +1,55 @@
 {
-   "0": {
-      "id_s": "0",
-      "name_s": "default",
-      "pwd_s": "default",
-      "role_s": "user",
-      "trip_id": "",
-      "booked_events_l": [],
-      "sugg_events_l": [],
-      "new_option": ""
-   },
-   "1": {
-      "id_s": "1",
-      "name_s": "hdb",
-      "pwd_s": "hdb",
-      "role_s": "user",
-      "new_option": "",
-      "trip_id": "1",
-      "booked_events_l": [
-         "1"
-      ],
-      "sugg_events_l": "5,2,6"
-   },
-   "2": {
-      "id_s": "2",
-      "name_s": "ml",
-      "pwd_s": "ml",
-      "role_s": "user",
-      "new_option": "",
-      "trip_id": "1",
-      "booked_events_l": "",
-      "sugg_events_l": []
-   },
-   "3": {
-      "id_s": "3",
-      "name_s": "admin",
-      "pwd_s": "admin",
-      "role_s": "organizer",
-      "trip_id": "",
-      "booked_events_l": [],
-      "sugg_events_l": [],
-      "new_option": ""
-   },
-   "6": {
-      "id_s": "6",
-      "name_s": "default1",
-      "pwd_s": "default",
-      "role_s": "user",
-      "new_option": "",
-      "trip_id": "",
-      "booked_events_l": "",
-      "sugg_events_l": [
-         "1",
-         "2"
-      ]
-   }
+    "0": {
+        "id_s": "0",
+        "name_s": "default",
+        "pwd_s": "default",
+        "role_s": "user",
+        "trip_id": "",
+        "booked_events_l": [],
+        "sugg_events_l": [],
+        "new_option": ""
+    },
+    "1": {
+        "id_s": "1",
+        "name_s": "hdb",
+        "pwd_s": "hdb",
+        "role_s": "user",
+        "new_option": "",
+        "trip_id": "1",
+        "booked_events_l": [],
+        "sugg_events_l": "5,2,6"
+    },
+    "2": {
+        "id_s": "2",
+        "name_s": "ml",
+        "pwd_s": "ml",
+        "role_s": "user",
+        "new_option": "",
+        "trip_id": "1",
+        "booked_events_l": "",
+        "sugg_events_l": []
+    },
+    "3": {
+        "id_s": "3",
+        "name_s": "admin",
+        "pwd_s": "admin",
+        "role_s": "organizer",
+        "trip_id": "",
+        "booked_events_l": [],
+        "sugg_events_l": [],
+        "new_option": ""
+    },
+    "6": {
+        "id_s": "6",
+        "name_s": "default1",
+        "pwd_s": "default",
+        "role_s": "user",
+        "new_option": "",
+        "trip_id": "",
+        "booked_events_l": "",
+        "sugg_events_l": [
+            "1",
+            "2"
+        ]
+    }
 }

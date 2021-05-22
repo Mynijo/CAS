@@ -39,7 +39,7 @@ html(lang='de')
                             th= "Booked Events"
                     each booked_events_l in localEvent_opl.booked_events_l
                         tr
-                            td= booked_events_l + ', '
+                            td= a(href=`/localevent/${booked_events_l}`)= localEvent_opl.name_s + ', '
 
                 div 
                     label="Cancel following event" 
@@ -49,9 +49,6 @@ html(lang='de')
                     input(type="hidden" id="trip_id" name="trip_id" value=`${localEvent_opl.trip_id}` required)
                     input(type="hidden" id="booked_events_l" name="booked_events_l" value=`${localEvent_opl.booked_events_l}` required)    
                     input(type="hidden" id="sugg_events_l" name="sugg_events_l" value=`${localEvent_opl.sugg_events_l}` required)
-
-
-
 
             div
                 button(formaction=`/organizer/userlist` formmethod="GET" class="e-button")= "Back" 
