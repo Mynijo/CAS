@@ -17,6 +17,10 @@ class UserData_cl {
         this.maxidPath_s = PATH.resolve(baseDir_s, 'data', 'maxid_user.json');
         let content_s = FS.readFileSync(this.path_s, 'utf8');
         this.allData_o = JSON.parse(content_s);
+
+        this.eventPath_s = PATH.resolve(baseDir_s, 'data', 'localevent.json');
+        content_s = FS.readFileSync(this.path_s, 'utf8');
+        this.allEventData_o = JSON.parse(content_s);
     }
 
     get_all() {
@@ -29,7 +33,7 @@ class UserData_cl {
         return data_a;
     }
 
-    get_by_id(id) {
+    get_by_id_old(id) {
         for (let key_s in this.allData_o) {
             if (key_s == id) {
                 return this.allData_o[key_s];
@@ -37,6 +41,37 @@ class UserData_cl {
         }
         return null;
     }
+
+    get_by_id (id) {
+      let data = null;
+      let booked_list = [];
+      let sugg_list = [];
+
+      for (let key_s in this.allData_o) {
+         if (key_s == id) {
+            data = this.allData_o[key_s];
+
+            let b_event_id_s = data["booked_events_l"];
+            for (let events_key_s in this.allEventData_o) {
+               if(b_event_id_s.includes(events_key_s)){
+                  booked_list.push(this.allEventData_o[events_key_s]);
+               }
+            }
+            data["booked_events_l"] = booked_list;
+
+            
+            let s_event_id_s = data["sugg_events_l"];
+            for (let events_key_s in this.allEventData_o) {
+               if(s_event_id_s.includes(events_key_s)){
+                  sugg_list.push(this.allEventData_o[events_key_s]);
+               }
+            }
+            data["sugg_events_l"] = sugg_list;
+            break;
+         }
+      }
+      return data;
+   }
 
     add(data_opl) {
         let id_s = this.getNewId_p();
@@ -49,7 +84,8 @@ class UserData_cl {
   
     add_sugg(data_opl, id) {
       if (id in this.allData_o) {
-          if (data_opl["new_option"] != "") {              
+          if (data_opl["new_option"] != "") {      
+             let test = data_opl["sugg_events_l"];
               if (isEmpty(data_opl["sugg_events_l"])) {
                   data_opl["sugg_events_l"] = [];
               }
@@ -144,7 +180,6 @@ class UserData_cl {
 
     get_total_booked_counter()
     {
-      let data_a = [];
       let counter = 0;
       for (let key_s in this.allData_o) {
           if (key_s != "0" && !isEmpty(this.allData_o[key_s]["booked_events_l"])) {
