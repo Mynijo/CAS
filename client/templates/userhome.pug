@@ -31,7 +31,8 @@ html(lang='de')
                             th= "Suggested Events"
                     each sugg_events_l in localUser_opl.sugg_events_l
                         tr
-                            td= sugg_events_l + ', '
+                            td 
+                                a(href=`/user/localeventuserinformation/${sugg_events_l}`)= sugg_events_l + ', '
 
                 div 
                     table
