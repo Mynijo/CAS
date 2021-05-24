@@ -119,20 +119,26 @@ class UserData_cl {
         }
     }
 
-    add_book(data_opl, id) {
-        if (id in this.allData_o) {
-            if (data_opl["new_option"] != "") {
-                if (isEmpty(data_opl["booked_events_l"])) {
-                    data_opl["booked_events_l"] = [];
-                } else {
-                    data_opl["booked_events_l"] = data_opl["booked_events_l"].split(',')
-                }
-                if (!(data_opl["booked_events_l"].includes(data_opl["new_option"]))) {
-                    data_opl["booked_events_l"].push(data_opl["new_option"]);
-                }
-                data_opl["new_option"] = "";
+    add_book(data_opl, userid, eventid) {
+        if (userid in this.allData_o) {
+            let userData_o = this.allData_o[userid];
+            if (!userData_o.booked_events_l.includes(eventid)) {
+                userData_o.booked_events_l.push(eventid);
+                this.allData_o[userid] = userData_o;
             }
-            this.allData_o[id] = data_opl;
+
+            // if (data_opl["new_option"] != "") {
+            //     if (isEmpty(data_opl["booked_events_l"])) {
+            //         data_opl["booked_events_l"] = [];
+            //     } else {
+            //         data_opl["booked_events_l"] = data_opl["booked_events_l"].split(',')
+            //     }
+            //     if (!(data_opl["booked_events_l"].includes(data_opl["new_option"]))) {
+            //         data_opl["booked_events_l"].push(data_opl["new_option"]);
+            //     }
+            //     data_opl["new_option"] = "";
+            // }
+
             this.sync_p();
         }
     }
@@ -204,7 +210,7 @@ function isEmpty(obj) {
     return Object.keys(obj).length === 0;
 }
 
-Array.prototype.remove = function() {
+Array.prototype.remove = function () {
     var what, a = arguments,
         L = a.length,
         ax;
