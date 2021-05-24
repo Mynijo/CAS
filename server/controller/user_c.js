@@ -73,7 +73,7 @@ router_o.post(ressourcePath_s + '/del_sugg/:id', function (req_opl, res_ops) {
 });
 
 router_o.post(ressourcePath_s + '/add_book/:id', function (req_opl, res_ops) {
-    let id_s = userData_o.add_book(req_opl.body, req_opl.id);
+    let id_s = userData_o.add_book(req_opl.body, req_opl.params.id);
     res_ops.redirect('/organizer/UserList');
 });
 

@@ -125,6 +125,9 @@ class UserData_cl {
         if (id in this.allData_o) {
             let userData_o = this.allData_o[id];
             console.log(userData_o);
+            if (isEmpty(userData_o.booked_events_l)) {
+                userData_o.booked_events_l = [];
+            }
             if (!userData_o.booked_events_l.includes(data_opl["id_s"])) {
                 userData_o.booked_events_l.push(data_opl["id_s"]);
                 this.allData_o[id] = userData_o;
