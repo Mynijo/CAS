@@ -63,7 +63,6 @@ router_o.get(ressourcePath_s + "/localeventuserinformation/:id", function(req_op
 });
 
 router_o.post(ressourcePath_s + '/add_sugg/:id', function(req_opl, res_ops) {
-    userData_o.get_total_booked_counter();
     let id_s = userData_o.add_sugg(req_opl.body, req_opl.params.id);
     res_ops.redirect('/organizer/UserList');
 });
