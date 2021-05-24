@@ -119,12 +119,15 @@ class UserData_cl {
         }
     }
 
-    add_book(data_opl, userid, eventid) {
-        if (userid in this.allData_o) {
-            let userData_o = this.allData_o[userid];
-            if (!userData_o.booked_events_l.includes(eventid)) {
-                userData_o.booked_events_l.push(eventid);
-                this.allData_o[userid] = userData_o;
+    add_book(data_opl, id) {
+        console.log("add_book");
+        console.log(id);
+        if (id in this.allData_o) {
+            let userData_o = this.allData_o[id];
+            console.log(userData_o);
+            if (!userData_o.booked_events_l.includes(data_opl["id_s"])) {
+                userData_o.booked_events_l.push(data_opl["id_s"]);
+                this.allData_o[id] = userData_o;
             }
 
             // if (data_opl["new_option"] != "") {
