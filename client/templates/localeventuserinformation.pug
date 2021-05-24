@@ -45,9 +45,7 @@ html(lang='de')
           label= "Time to book"
           input(type="text" id="deadline_s" name="deadline_s" value=`${localEvent_opl.deadline_s}` required)
 
-    localUser_opl.new_option = localEvent_opl.id_s
-
-
+    
       div
         a(href="/localevent" class="e-button")= "Back"
         button(formaction=`/user/add_book/${localUser_opl.id_s}` formmethod="POST" class="e-button")= "Book"

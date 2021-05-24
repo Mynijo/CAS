@@ -28,7 +28,7 @@ class LocalEventView_cl {
     }
 
     localeventuserinformation_px(data_user_apl, event_data_apl) {
-        let markup_s = this.compiledUserSettingTemplate_p({ localUser_opl: data_user_apl, localEvent_opl: event_data_apl });
+        let markup_s = this.compiledlocaleventuserinformationTemplate_p({ localUser_opl: data_user_apl, localEvent_opl: event_data_apl });
         return markup_s;
     }
 }
