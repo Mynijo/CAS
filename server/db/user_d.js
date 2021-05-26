@@ -178,7 +178,15 @@ class UserData_cl {
 
     set_by_id(data_opl, id) {
         if (id in this.allData_o) {
-            this.allData_o[id] = data_opl;
+            if (isEmpty(data_opl["sugg_events_l"])) {
+               data_opl["sugg_events_l"] = [];
+            }
+
+            if (isEmpty(data_opl["booked_events_l"])) {
+               data_opl["booked_events_l"] = [];
+            }
+
+            this.allData_o[id] = data_opl;    
             this.sync_p();
         } else {
             add(data_opl);
