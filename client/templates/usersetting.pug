@@ -43,9 +43,7 @@ html(lang='de')
           table
             tr
               th= "Booked Events"
-          each booked_events_l in localEvent_opl.booked_events_l
-            tr
-              td= booked_events_l + ', '
+              td= localEvent_opl.booked_events_l.join(', ')
 
       div
         button(formaction=`/organizer/userlist` formmethod="GET" class="e-button")= "Back" 
