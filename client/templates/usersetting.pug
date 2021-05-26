@@ -37,9 +37,7 @@ html(lang='de')
           table
             tr
               th= "Suggested Events"
-          each sugg_events_l in localEvent_opl.sugg_events_l
-            tr
-              td= sugg_events_l + ', '
+              td= localEvent_opl.sugg_events_l.join(', ')
 
         div 
           table
