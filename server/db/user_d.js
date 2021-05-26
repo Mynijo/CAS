@@ -77,6 +77,15 @@ class UserData_cl {
         let id_s = this.getNewId_p();
         let data_o = data_opl;
         data_o["id_s"] = id_s;
+
+        if (isEmpty(data_o["sugg_events_l"])) {
+         data_o["sugg_events_l"] = [];
+        }
+
+        if (isEmpty(data_o["booked_events_l"])) {
+         data_o["booked_events_l"] = [];
+        }
+
         this.allData_o[id_s] = data_o;
         this.sync_p();
         return id_s;
