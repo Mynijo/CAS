@@ -30,7 +30,7 @@
       "role_s": "user",
       "new_option": "",
       "trip_id": "1",
-      "booked_events_l": "",
+      "booked_eventts_l": [],
       "sugg_events_l": []
    },
    "3": {
@@ -51,7 +51,7 @@
       "new_option": "",
       "trip_id": "",
       "booked_events_l": [
-         "1"
+         "1","6"
       ],
       "sugg_events_l": [
          "1",
@@ -65,7 +65,7 @@
       "role_s": "user",
       "new_option": "Tennis Tournament",
       "trip_id": "",
-      "booked_events_l": "",
-      "sugg_events_l": ""
+      "booked_events_l": [],
+      "sugg_events_l": []
    }
 }
