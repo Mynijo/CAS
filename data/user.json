@@ -16,12 +16,14 @@
       "role_s": "user",
       "new_option": "",
       "trip_id": "1",
-      "booked_events_l": [],
+      "booked_events_l": [
+         "3"
+      ],
       "sugg_events_l": [
          "1",
          "2",
          "3",
-         "4"
+         "5"
       ]
    },
    "2": {
@@ -54,7 +56,10 @@
       "booked_events_l": [
          "1"
       ],
-      "sugg_events_l": [1,2]
+      "sugg_events_l": [
+         1,
+         2
+      ]
    },
    "7": {
       "id_s": "7",

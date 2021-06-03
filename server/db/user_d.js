@@ -223,7 +223,7 @@ class UserData_cl {
         let counter = 0;
         for (let key_s in this.allData_o) {
             if (key_s != "0" && !isEmpty(this.allData_o[key_s]["booked_events_l"])) {
-                counter = counter + this.allData_o[key_s]["booked_events_l"].split(',').length;
+                counter = counter + this.allData_o[key_s]["booked_events_l"].length;
             }
         }
         return counter;
