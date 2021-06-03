@@ -26,22 +26,16 @@ html(lang='de')
                     input(type="text" id="role_s" name="role_s" value=`${localUser_opl.role_s}` required)
 
                 div 
-                    table
-                        tr
-                            th= "Suggested Events"
-                    each sugg_events_l in localUser_opl.sugg_events_l
-                        tr
-                            td 
-                                a(href=`/user/localeventuserinformation/${sugg_events_l}`)= sugg_events_l + ', '
+                table
+                    tr
+                    th= "Suggested Events"
+                    td= localUser_opl.sugg_events_l.join(', ')
 
                 div 
-                    table
-                        tr
-                            th= "Booked Events"
-                    each booked_events_l in localUser_opl.booked_events_l
-                        tr
-                            td
-                                a(href=`/user/localeventuserinformation/${booked_events_l}`)= booked_events_l + ', '
+                table
+                    tr
+                    th= "Booked Events"
+                    td= localUser_opl.booked_events_l.join(', ')
 
                 div 
                     label="Cancel following event" 

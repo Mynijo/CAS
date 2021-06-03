@@ -27,11 +27,11 @@
       "id_s": "2",
       "name_s": "ml",
       "pwd_s": "ml",
-      "role_s": "user",
-      "new_option": "",
-      "trip_id": "1",
-      "booked_eventts_l": [],
-      "sugg_events_l": []
+      "role_s": "organizer",
+      "trip_id": "",
+      "booked_events_l": [],
+      "sugg_events_l": [],
+      "new_option": ""
    },
    "3": {
       "id_s": "3",

@@ -34,12 +34,14 @@ class UserData_cl {
     }
 
     get_by_id(id) {
+        let data_o = null;
         for (let key_s in this.allData_o) {
             if (key_s == id) {
-                return this.allData_o[key_s];
+                data_o = this.allData_o[key_s];
+                break;
             }
         }
-        return null;
+        return data_o;
     }
 
     get_by_id_with_o_list(id) {
