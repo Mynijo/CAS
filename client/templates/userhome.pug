@@ -26,16 +26,22 @@ html(lang='de')
                     input(type="text" id="role_s" name="role_s" value=`${localUser_opl.role_s}` required)
 
                 div 
-                table
-                    tr
-                    th= "Suggested Events"
-                    td= localUser_opl.sugg_events_l.join(', ')
+                    table
+                        tr
+                            th= "Suggested Events"
+                    each sugg_events_l in localUser_opl.sugg_events_l
+                        tr
+                            td 
+                                a(href=`/user/localeventuserinformation/${sugg_events_l}`)= sugg_events_l + ', '
 
                 div 
-                table
-                    tr
-                    th= "Booked Events"
-                    td= localUser_opl.booked_events_l.join(', ')
+                    table
+                        tr
+                            th= "Booked Events"
+                    each booked_events_l in localUser_opl.booked_events_l
+                        tr
+                            td
+                                a(href=`/user/localeventuserinformation/${booked_events_l}`)= booked_events_l + ', '
 
                 div 
                     label="Cancel following event" 
@@ -47,6 +53,4 @@ html(lang='de')
                     input(type="hidden" id="sugg_events_l" name="sugg_events_l" value=`${localUser_opl.sugg_events_l}` required)
 
             div
-                button(formaction=`/organizer/userlist` formmethod="GET" class="e-button")= "Back" 
-                button(formaction=`/user/${action_s}/${localUser_opl.id_s}` formmethod="POST" class="e-button")= "Save" 
-                button(formaction=`/user/delete/${localUser_opl.id_s}` formmethod="POST" class="e-button")= "Delete" 
+                button(formaction=`/localevent` formmethod="GET" class="e-button")= "Events"
