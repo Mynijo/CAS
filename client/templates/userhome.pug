@@ -45,8 +45,13 @@ html(lang='de')
 
                 div 
                     label="Cancel following event" 
-                    input(type="text" id="new_option" name="new_option" value=`${localUser_opl.new_option}` required)
+                    input(type="text" id="new_option" name="new_option" value=`${localUser_opl.new_option}`)
                     button(formaction=`/user/del_book/${localUser_opl.id_s}` formmethod="POST" class="e-button")= "Cancel" 
+
+                div 
+                    label="Book following event" 
+                    input(type="text" id="new_option" name="new_option" value=`${localUser_opl.new_option}`)
+                    button(formaction=`/user/add_book/${localUser_opl.id_s}` formmethod="POST" class="e-button")= "Book" 
 
                     input(type="hidden" id="trip_id" name="trip_id" value=`${localUser_opl.trip_id}` required)
                     input(type="hidden" id="booked_events_l" name="booked_events_l" value=`${localUser_opl.booked_events_l}` required)    
