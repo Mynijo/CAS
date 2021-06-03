@@ -18,8 +18,10 @@
       "trip_id": "1",
       "booked_events_l": [],
       "sugg_events_l": [
-         "5",
-         "2"
+         "1",
+         "2",
+         "3",
+         "4"
       ]
    },
    "2": {
@@ -52,10 +54,7 @@
       "booked_events_l": [
          "1"
       ],
-      "sugg_events_l": [
-         "1",
-         "2"
-      ]
+      "sugg_events_l": [1,2]
    },
    "7": {
       "id_s": "7",
