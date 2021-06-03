@@ -81,11 +81,11 @@ class UserData_cl {
         data_o["id_s"] = id_s;
 
         if (isEmpty(data_o["sugg_events_l"])) {
-         data_o["sugg_events_l"] = [];
+            data_o["sugg_events_l"] = [];
         }
 
         if (isEmpty(data_o["booked_events_l"])) {
-         data_o["booked_events_l"] = [];
+            data_o["booked_events_l"] = [];
         }
 
         this.allData_o[id_s] = data_o;
@@ -139,8 +139,8 @@ class UserData_cl {
             if (isEmpty(userData_o.booked_events_l)) {
                 userData_o.booked_events_l = [];
             }
-            if (!userData_o.booked_events_l.includes(data_opl["id_s"])) {
-                userData_o.booked_events_l.push(data_opl["id_s"]);
+            if (!userData_o.booked_events_l.includes(data_opl["new_option"])) {
+                userData_o.booked_events_l.push(data_opl["new_option"]);
                 this.allData_o[id] = userData_o;
             }
 
@@ -181,14 +181,14 @@ class UserData_cl {
     set_by_id(data_opl, id) {
         if (id in this.allData_o) {
             if (isEmpty(data_opl["sugg_events_l"])) {
-               data_opl["sugg_events_l"] = [];
+                data_opl["sugg_events_l"] = [];
             }
 
             if (isEmpty(data_opl["booked_events_l"])) {
-               data_opl["booked_events_l"] = [];
+                data_opl["booked_events_l"] = [];
             }
 
-            this.allData_o[id] = data_opl;    
+            this.allData_o[id] = data_opl;
             this.sync_p();
         } else {
             add(data_opl);
@@ -235,7 +235,7 @@ function isEmpty(obj) {
     return Object.keys(obj).length === 0;
 }
 
-Array.prototype.remove = function () {
+Array.prototype.remove = function() {
     var what, a = arguments,
         L = a.length,
         ax;
