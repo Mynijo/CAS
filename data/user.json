@@ -19,8 +19,7 @@
       "booked_events_l": [],
       "sugg_events_l": [
          "5",
-         "2",
-         "6"
+         "2"
       ]
    },
    "2": {
@@ -51,8 +50,7 @@
       "new_option": "",
       "trip_id": "",
       "booked_events_l": [
-         "1",
-         "6"
+         "1"
       ],
       "sugg_events_l": [
          "1",
