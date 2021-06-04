@@ -6,24 +6,27 @@ html(lang='de')
         meta(http-equiv='X-UA-Compatible' content='IE=edge')
         meta(name='viewport' content='width=device-width, initial-scale=1')
         link(rel='stylesheet' href='/styles/normalize.css')
+        link(rel='stylesheet' href='/styles/detail.css')
         link(rel='stylesheet' href='/styles/buttons.css')
+        link(rel='stylesheet' href='/styles/labels.css')
     body
+        form   
+            div      
+                div
+                    label= "Name of the Agency"
+                    input(type="text" id="agencyname_s" name="agencyname_s" value="My Agency" readonly)
 
-    form
-      div
-        div
-          label= "Name of the Agency"
-          input(type="text" id="agencyname_s" name="agencyname_s" value="My Agency" readonly)
+                div
+                    label= "Address"
+                    input(type="text" id="address_s" name="address_s" value="ExampleStreet 5, 55555 ExampleTown" readonly)
 
-        div
-          label= "Address"
-          input(type="text" id="address_s" name="address_s" value="ExampleStreet 5, 55555 ExampleTown" readonly)
+                div
+                    label= "PhoneNumber"
+                    input(type="text" id="phonenumber_s" name="phonenumber_s" value="+55 555 5555555" readonly)
 
-        div
-          label= "PhoneNumber"
-          input(type="text" id="phonenumber_s" name="phonenumber_s" value="+55 555 5555555" readonly)
+                div
+                    label= "eMail-Address"
+                    input(type="text" id="eMail_s" name="eMail_s" value="example@example.com" readonly)
 
-        div
-          label= "eMail-Address"
-          input(type="text" id="eMail_s" name="eMail_s" value="example@example.com" readonly)
-
+            div
+                a(href="/userCurrent/" class="e-button")= "Back"
