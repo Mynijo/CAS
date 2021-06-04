@@ -19,6 +19,9 @@ class LocalEventView_cl {
         path_s = PATH.resolve(baseDir_s, 'client', 'templates', 'localeventuserinformation.pug');
         this.compiledlocaleventuserinformationTemplate_p = PUG.compileFile(path_s);
 
+        path_s = PATH.resolve(baseDir_s, 'client', 'templates', 'agency.pug');
+        this.compiledagencyTemplate_p = PUG.compileFile(path_s);
+
     }
 
 
@@ -29,6 +32,11 @@ class LocalEventView_cl {
 
     localeventuserinformation_px(data_user_apl, event_data_apl) {
         let markup_s = this.compiledlocaleventuserinformationTemplate_p({ localUser_opl: data_user_apl, localEvent_opl: event_data_apl });
+        return markup_s;
+    }
+
+    agency_px(data_user_apl, event_data_apl) {
+        let markup_s = this.compiledagencyTemplate_p({ localUser_opl: data_user_apl });
         return markup_s;
     }
 }

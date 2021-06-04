@@ -62,6 +62,15 @@ router_o.get(ressourcePath_s + "/localeventuserinformation/:id", function(req_op
     res_ops.send(markup_s);
 });
 
+router_o.get(ressourcePath_s + "/agency", function(req_opl, res_ops) {
+    let data_a = userData_o.get_by_id(this.currentUserId_s);
+    let dataEvent_a = localEventData_o.get_by_id(req_opl.params.id);
+    let markup_s = UserHomeView_o.agency_px(data_a, dataEvent_a);
+    res_ops.send(markup_s);
+});
+
+
+
 router_o.get(ressourcePath_s + "Current/", function(req_opl, res_ops) {
     res_ops.redirect('/user/home/' + this.currentUserId_s);
 });
