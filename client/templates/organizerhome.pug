@@ -1,22 +1,42 @@
 doctype html
 html(lang='de')
-    head
-        title= "Home"
-        meta(charset='utf-8')
-        meta(http-equiv='X-UA-Compatible' content='IE=edge')
-        meta(name='viewport' content='width=device-width, initial-scale=1')
-        link(rel='stylesheet' href='/styles/normalize.css')
-        link(rel='stylesheet' href='/styles/buttons.css')
-    body
-        form
-            div
-                button(formaction=`/organizer/userlist` formmethod="GET" class="e-button")= "User Management"
-            
-            div
-                button(formaction=`/organizer/eventsettings` formmethod="GET" class="e-button")= "Event Settings"
-
-            div
-                button(formaction=`/organizer/analyze` formmethod="GET" class="e-button")= "Analyze"
-            
-            div
-                button(formaction=`/` formmethod="GET" class="e-button")= "Logout"
+  head
+    title= "Home"
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet')
+    link(rel='stylesheet' href='/styles/styles.css')
+    link(rel='stylesheet' href='/styles/admin.css')
+  body
+    nav.navbar.is-white
+      div.container
+        div.navbar-brand
+          a.navbar-item.brand-text(href='/organizer')= "YBTG Admin"
+        div(class="navbar-burger burger" data-target="navMenu")
+            span
+            span
+            span
+        div.navbar-menu#navMenu
+          div.navbar-start
+            a.navbar-item(href="/organizer")= "Home"
+            a.navbar-item(href="/")= "Logout"            
+    div.container
+      div.columns
+        div.column.is-3
+          aside.menu.is-hidden-mobile
+            p.menu-label= "General"                   
+            ul.menu-list
+              li
+                a.is-active(href='#')= "Dashboard"
+              li
+                a(href='/organizer/userlist')= "User Management"
+            p.menu-label= "Event Management"
+            ul.menu-list
+              li
+                a(href='/organizer/eventsettings')= "Events"
+              li
+                a(href='/organizer/analyze')= "Analyze"
+          
+          
