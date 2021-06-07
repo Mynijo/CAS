@@ -10,18 +10,21 @@ html(lang='de')
     link(rel='stylesheet' href='/styles/styles.css')
     link(rel='stylesheet' href='/styles/admin.css')
   body
-    nav.navbar.is-white
+    nav.navbar.is-white(role="navigation" aria-label="main navigation")
       div.container
         div.navbar-brand
           a.navbar-item.brand-text(href='/organizer')= "YBTG Admin"
-        div(class="navbar-burger burger" data-target="navMenu")
-            span
-            span
-            span
+        div.navbar-burger(role="button" aria-label="menu" aria-expanded= "false" data-target="navMenu")
+            span(aria-hidden="true")
+            span(aria-hidden="true")
+            span(aria-hidden="true")  
         div.navbar-menu#navMenu
           div.navbar-start
             a.navbar-item(href="/organizer")= "Home"
-            a.navbar-item(href="/")= "Logout"            
+          div.navbar-end
+            div.navbar-item
+              div.buttons
+                a.button.is-primary(href="/")= "Logout"
     div.container
       div.columns
         div.column.is-3
@@ -38,5 +41,10 @@ html(lang='de')
                 a(href='/organizer/eventsettings')= "Events"
               li
                 a(href='/organizer/analyze')= "Analyze"
-          
+        div.column.is-9
+          section(class="hero is-info welcome is-small")
+            div.hero-body
+              div.container
+                h1.title Hello, Admin.
+                h2.subtitle this is your dashboard!
           
