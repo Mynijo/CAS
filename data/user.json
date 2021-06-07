@@ -68,7 +68,7 @@
       "role_s": "user",
       "new_option": "",
       "trip_id": "",
-      "booked_events_l": "",
-      "sugg_events_l": ""
+      "booked_events_l": [],
+      "sugg_events_l": []
    }
 }
