@@ -8,7 +8,7 @@
 const PATH = require('path');
 const PUG = require('pug');
 
-class LocalEventView_cl {
+class UserView_cl {
     constructor() {
         let baseDir_a = PATH.dirname(require.main.filename).split(PATH.sep);
         baseDir_a.pop();
@@ -40,5 +40,5 @@ class LocalEventView_cl {
         return markup_s;
     }
 }
-module.exports = new LocalEventView_cl();
+module.exports = new UserView_cl();
 // EOF
