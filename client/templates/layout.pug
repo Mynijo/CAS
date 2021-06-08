@@ -1,0 +1,51 @@
+doctype html
+html(lang='de')
+  head
+    title= YBTG - {title}
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet')
+    link(rel='stylesheet' href='/styles/styles.css')
+    block css
+    
+  body
+    nav.navbar.is-white(role="navigation" aria-label="main navigation")
+      div.container
+        div.navbar-brand
+          a.navbar-item.brand-text(href='/organizer')= "YBTG Admin"
+        div.navbar-burger(role="button" aria-label="menu" aria-expanded= "false" data-target="navMenu")
+            span(aria-hidden="true")
+            span(aria-hidden="true")
+            span(aria-hidden="true")          
+        div.navbar-menu#navMenu
+          block main-navigation
+            div.navbar-start
+                a.navbar-item(href="/organizer")= "Home"
+            div.navbar-end
+              div.navbar-item
+                div.buttons
+                  a.button.is-info(href="/")= "Logout"
+    div.container
+      div.columns
+        div.column.is-3
+          aside.menu.is-hidden-mobile
+            block side-navigation
+              p.menu-label= "General"                   
+              ul.menu-list
+                li
+                  a.is-active(href='#')= "Dashboard"
+                li
+                  a(href='/organizer/userlist')= "User Management"
+              p.menu-label= "Event Management"
+              ul.menu-list
+                li
+                  a(href='/organizer/eventsettings')= "Events"
+                li
+                  a(href='/organizer/analyze')= "Analyze"
+        div.column.is-9
+          nav.breadcrumb(aria-label="breadcrumbs")
+            block breadcrump            
+          block main-content
+            
