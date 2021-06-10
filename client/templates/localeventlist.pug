@@ -28,13 +28,14 @@ block breadcrump
     li.is-active
       a(href="#" aria-current="page")= "Eventlist"      
 block main-content
-  table
-    tr
-      th= "Date"
-      th= "Place"
-      th= "Description"
-      th= "Organizer"
-      td= "More Information"
+  table(class="table is-fullwith is-striped")
+    thead
+      tr
+        th= "Date"
+        th= "Place"
+        th= "Description"
+        th= "Organizer"
+        td= "More Information"
     each localEvent_o in allLocalEvents_apl
       tr
         td= localEvent_o.date_s
