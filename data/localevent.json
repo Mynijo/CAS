@@ -11,18 +11,6 @@
       "orga_s": "Yggdrasil",
       "trip_id": "0"
    },
-   "1": {
-      "id_s": "1",
-      "name_s": "Bingo",
-      "location_s": "BingoHouse",
-      "date_s": "15.15.1915",
-      "start_time_s": "16:00",
-      "end_time_s": "18:00",
-      "price_s": "12",
-      "deadline_s": "01.01.2025",
-      "orga_s": "TimertraverlGmbH",
-      "trip_id": "1"
-   },
    "2": {
       "id_s": "2",
       "name_s": "Waffle baking",

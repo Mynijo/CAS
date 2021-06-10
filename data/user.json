@@ -48,7 +48,7 @@
    },
    "6": {
       "id_s": "6",
-      "name_s": "default1",
+      "name_s": "default",
       "pwd_s": "default",
       "role_s": "user",
       "new_option": "",
@@ -57,8 +57,8 @@
          "1"
       ],
       "sugg_events_l": [
-         1,
-         2
+         "1",
+         "2"
       ]
    },
    "7": {
