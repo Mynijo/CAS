@@ -9,7 +9,7 @@ const FS = require('fs');
 const PATH = require('path');
 
 class LocalEventData_cl {
-   constructor () {
+   constructor() {
       let baseDir_a = PATH.dirname(require.main.filename).split(PATH.sep);
       baseDir_a.pop();
       let baseDir_s = baseDir_a.join(PATH.sep);
@@ -19,7 +19,7 @@ class LocalEventData_cl {
       this.allData_o = JSON.parse(content_s);
    }
 
-   get_all () {
+   get_all() {
       let data_a = [];
       for (let key_s in this.allData_o) {
          if (key_s != "0") {
@@ -29,7 +29,7 @@ class LocalEventData_cl {
       return data_a;
    }
 
-   get_by_id (id) {
+   get_by_id(id) {
       let data_o = null;
       if (id in this.allData_o) {
          data_o = this.allData_o[id];
@@ -37,7 +37,7 @@ class LocalEventData_cl {
       return data_o;
    }
 
-   add (data_opl) {
+   add(data_opl) {
       let id_s = this.getNewId_p();
       let data_o = data_opl;
       data_o["id_s"] = id_s;
@@ -46,32 +46,32 @@ class LocalEventData_cl {
       return id_s;
    }
 
-   set_by_id(data_opl, id){
-      if (id_spl in this.allData_o) {
-         this.allData_o[id_spl] = data_opl;
+   set_by_id(id_s, data_opl) {
+      if (id_s in this.allData_o) {
+         this.allData_o[id_s] = data_opl;
          this.sync_p();
       }
-      else{
+      else {
          add(data_opl);
       }
    }
 
-   del_by_id() {
+   del_by_id(id_s) {
       let result_b = false;
-      if (id_spl in this.allData_o) {
-         delete this.allData_o[id_spl];
+      if (id_s in this.allData_o) {
+         delete this.allData_o[id_s];
          result_b = true;
          this.sync_p();
       }
       return result_b;
    }
 
-   sync_p () {
+   sync_p() {
       let data_s = JSON.stringify(this.allData_o, null, 3);
       FS.writeFileSync(this.path_s, data_s);
    }
 
-   getNewId_p () {
+   getNewId_p() {
       let data_o = JSON.parse(FS.readFileSync(this.maxidPath_s, 'utf8'));
       data_o.maxid += 1;
       let data_s = JSON.stringify(data_o);
