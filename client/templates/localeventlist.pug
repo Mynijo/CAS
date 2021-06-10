@@ -1,30 +1,45 @@
-doctype html
-html(lang='de')
-  head
-    title= "Liste lokale Veranstaltungen"
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible' content='IE=edge')
-    meta(name='viewport' content='width=device-width, initial-scale=1')
-    link(rel='stylesheet' href='/styles/list.css')
-    link(rel='stylesheet' href='/styles/buttons.css')
-    link(rel='stylesheet' href='/styles/labels.css')
-    link(rel='stylesheet' href='/styles/tables.css')
-  body
-    table
+extends layout.pug 
+block css
+    link(rel='stylesheet' href='/styles/localeventlist.css')
+block main-navigation  
+  div.navbar-start
+    a.navbar-item(href="/organizer")= "Home"
+  div.navbar-end
+    div.navbar-item
+      div.buttons
+        a.button.is-info(href="/")= "Logout"
+block side-navigation    
+  p.menu-label= "General"                   
+  ul.menu-list
+    li
+      a(href='/organizer')= "Dashboard"
+    li
+      a(href='/organizer/userlist')= "User Management"
+  p.menu-label= "Event Management"
+  ul.menu-list
+    li
+      a.is-active(href='/organizer/eventsettings')= "Events"
+    li
+      a(href='/organizer/analyze')= "Analyze"
+block breadcrump
+  ul
+    li
+      a(href="/organizer")= "Home"    
+    li.is-active
+      a(href="#" aria-current="page")= "Eventlist"      
+block main-content
+  table
+    tr
+      th= "Date"
+      th= "Place"
+      th= "Description"
+      th= "Organizer"
+      td= "More Information"
+    each localEvent_o in allLocalEvents_apl
       tr
-        th= "Date"
-        th= "Place"
-        th= "Description"
-        th= "Organizer"
-        td= "More Information"
-      each localEvent_o in allLocalEvents_apl
-        tr
-          td= localEvent_o.date_s
-          td= localEvent_o.location_s
-          td= localEvent_o.name_s
-          td= localEvent_o.orga_s
-          td
-            a(href=`/localevent/${localEvent_o.id_s}`)= localEvent_o.name_s
-
-
-    a(href="/userCurrent/" class="e-button")= "Back"
+        td= localEvent_o.date_s
+        td= localEvent_o.location_s
+        td= localEvent_o.name_s
+        td= localEvent_o.orga_s
+        td
+          a(href=`/localevent/${localEvent_o.id_s}`)= localEvent_o.name_s
