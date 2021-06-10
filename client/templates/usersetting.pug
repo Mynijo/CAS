@@ -1,53 +1,62 @@
-doctype html
-html(lang='de')
-  head
-    title= "Lokale Veranstaltung"
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible' content='IE=edge')
-    meta(name='viewport' content='width=device-width, initial-scale=1')
-    link(rel='stylesheet' href='/styles/normalize.css')
-    link(rel='stylesheet' href='/styles/detail.css')
-    link(rel='stylesheet' href='/styles/buttons.css')
-    link(rel='stylesheet' href='/styles/labels.css')
-  body
+extends layout
+include useradmin_include.pug
+block breadcrump
+  ul
+    li
+      a(href="/organizer")= "Home"
+    li
+      a(href="/organizer/userlist")= "Userlist"
+    li.is-active
+      a(href="#" aria-current="page")= localEvent_opl.name_s      
+block main-content
     form
       input(type="hidden" id="id_s" name="id_s" value=`${localEvent_opl.id_s}`)
-      div
-        div
-          label= "Name"
-          input(type="text" id="name_s" name="name_s" value=`${localEvent_opl.name_s}` required autofocus)
-
-        div
-          label= "Password"
-          input(type="text" id="pwd_s" name="pwd_s" value=`${localEvent_opl.pwd_s}` required)
-
-        div
-          label= "Role"
-          input(type="text" id="role_s" name="role_s" value=`${localEvent_opl.role_s}` required)
-
-        div 
-          label="Eventsuggestion"
-          input(type="text" id="new_option" name="new_option" value=`${localEvent_opl.new_option}`)
+      div.field 
+        label.label= "Name"
+        div.control         
+          input.input(type="text" id="name_s" name="name_s" value=`${localEvent_opl.name_s}` required autofocus)
+      div.field
+        label.label= "Password"
+        div.control
+          input.input(type="text" id="pwd_s" name="pwd_s" value=`${localEvent_opl.pwd_s}` required)
+      div.field
+        label= "Role"
+        div.control         
+          input.input(type="text" id="role_s" name="role_s" value=`${localEvent_opl.role_s}` required)
+      div.field.has-addons
+        label="Eventsuggestion"
+        div.control           
+          input.input(type="text" id="new_option" name="new_option" value=`${localEvent_opl.new_option}`)
           input(type="hidden" id="trip_id" name="trip_id" value=`${localEvent_opl.trip_id}` required)
           input(type="hidden" id="booked_events_l" name="booked_events_l" value=`${localEvent_opl.booked_events_l}` required)    
           input(type="hidden" id="sugg_events_l" name="sugg_events_l" value=`${localEvent_opl.sugg_events_l}` required)
-
-
-        div 
-          table
+        div.control
+          button.button(formaction=`/user/add_sugg/${localEvent_opl.id_s}` formmethod="POST")= "Add Suggestion"
+      div.field 
+        div.control 
+          table.table
             tr
               th= "Suggested Events"
-              td= localEvent_opl.sugg_events_l.join(', ')
-
-        div 
+              th= ""
+            each suggested in localEvent_opl.sugg_events_l
+              tr
+                td= suggested
+                td
+                  button.button(formaction=`/user/del_sugg/${suggested}` formmethod="POST")= "Delete"      
+      div.field
+        div.control 
           table
-            tr
-              th= "Booked Events"
-              td= localEvent_opl.booked_events_l.join(', ')
-
-      div
-        button(formaction=`/organizer/userlist` formmethod="GET" class="e-button")= "Back" 
-        button(formaction=`/user/${action_s}/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Save" 
-        button(formaction=`/user/delete/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Delete" 
-        button(formaction=`/user/add_sugg/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Add Suggestion" 
-        button(formaction=`/user/del_sugg/${localEvent_opl.id_s}` formmethod="POST" class="e-button")= "Del Suggestion"
+            thead
+              tr
+                th= "Booked Events"
+                th= ""
+              each event in localEvent_opl.booked_events_l
+                tr 
+                  td event
+                  td
+      div.field.is-grouped
+        div.control
+          button.button(formaction=`/organizer/userlist` formmethod="GET")= "Back" 
+          button.button(formaction=`/user/${action_s}/${localEvent_opl.id_s}` formmethod="POST")= "Save" 
+          button.button(formaction=`/user/delete/${localEvent_opl.id_s}` formmethod="POST")= "Delete"            
+          

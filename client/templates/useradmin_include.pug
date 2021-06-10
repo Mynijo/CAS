@@ -1,0 +1,22 @@
+append head
+  title YBTG - Users
+block main-navigation  
+  div.navbar-start
+    a.navbar-item(href="/organizer")= "Home"
+  div.navbar-end
+    div.navbar-item
+      div.buttons
+        a.button.is-info(href="/")= "Logout"
+block side-navigation    
+  p.menu-label= "General"                   
+  ul.menu-list
+    li
+      a(href='/organizer')= "Dashboard"
+    li
+      a.is-active(href='/organizer/userlist')= "User Management"
+  p.menu-label= "Event Management"
+  ul.menu-list
+    li
+      a(href='/organizer/eventsettings')= "Events"
+    li
+      a(href='/organizer/analyze')= "Analyze"

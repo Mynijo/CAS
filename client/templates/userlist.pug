@@ -1,28 +1,25 @@
-doctype html
-html(lang='de')
-    head
-        title= "Home"
-        meta(charset='utf-8')
-        meta(http-equiv='X-UA-Compatible' content='IE=edge')
-        meta(name='viewport' content='width=device-width, initial-scale=1')
-        link(rel='stylesheet' href='/styles/list.css')
-        link(rel='stylesheet' href='/styles/buttons.css')
-        link(rel='stylesheet' href='/styles/labels.css')
-        link(rel='stylesheet' href='/styles/tables.css')       
-body
-    table
-        tr
-            th= "Name"
-            th= "Role"
-            th= ""
-        each user_o in allLocalEvents_apl
-            tr
-                td= user_o.name_s
-                td= user_o.role_s
-                td 
-                    a(href=`/organizer/usersetting/${user_o.id_s}`)= user_o.name_s
-    form
-        div 
-            button(formaction=`/organizer/` formmethod="GET" class="e-button")= "Back" 
-            button(formaction=`/organizer/usersetting/0` formmethod="GET" class="e-button")= "New User" 
+extends layout
+include useradmin_include.pug
+block breadcrump
+  ul
+    li
+      a(href="/organizer")= "Home"
+    li.is-active
+      a(href="#" aria-current="page")= "User Management"      
+block main-content
+  div.buttons
+    a.button.is-info(href="/organizer/usersetting/0")= "Add"
+  table(class="table is-fullwith is-striped")
+    thead
+      tr
+        th= "Name"
+        th= "Role"
+        th= ""
+    each user_o in allLocalEvents_apl
+      tr
+        td= user_o.name_s
+        td= user_o.role_s
+        td 
+          a.button.is-info(href=`/organizer/usersetting/${user_o.id_s}`)= "Edit"
+    
 
