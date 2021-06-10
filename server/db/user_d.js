@@ -197,9 +197,15 @@ class UserData_cl {
             if (isEmpty(data_opl["sugg_events_l"])) {
                 data_opl["sugg_events_l"] = [];
             }
+            else {
+                data_opl["sugg_events_l"] = data_opl["sugg_events_l"].split(',')
+            }
 
             if (isEmpty(data_opl["booked_events_l"])) {
                 data_opl["booked_events_l"] = [];
+            }
+            else {
+                data_opl["booked_events_l"] = data_opl["booked_events_l"].split(',')
             }
 
             this.allData_o[id] = data_opl;
@@ -249,7 +255,7 @@ function isEmpty(obj) {
     return Object.keys(obj).length === 0;
 }
 
-Array.prototype.remove = function() {
+Array.prototype.remove = function () {
     var what, a = arguments,
         L = a.length,
         ax;
