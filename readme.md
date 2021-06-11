@@ -18,3 +18,9 @@ Benutzer-Zugang: Benutzername: default, Kennwort: default
 
 - Die Controller-Klassen trennen teilweise nicht sauber nach Administratoren und normalen Benutzern,
   so dass normnale Benutzer Funktionen ausführen können, die nur für Administratoren erlaubt sind.  
+  
+## Git
+
+clone: https://github.com/Mynijo/CAS.git
+broeser: https://github.com/Mynijo/CAS
+ssh: git@github.com:Mynijo/CAS.git
