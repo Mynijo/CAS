@@ -18,5 +18,3 @@ Benutzer-Zugang: Benutzername: default, Kennwort: default
 
 - Die Controller-Klassen trennen teilweise nicht sauber nach Administratoren und normalen Benutzern,
   so dass normnale Benutzer Funktionen ausführen können, die nur für Administratoren erlaubt sind.  
-- Die Funktion del_sugg in user_d.js löscht nicht den Buchungsvorschlag, sondern bringt die user.json
-  durcheinander. Ursache noch unklar.
