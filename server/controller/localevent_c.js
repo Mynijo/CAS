@@ -46,7 +46,7 @@ router_o.post(ressourcePath_s + '/save/:id', function (req_opl, res_ops) {
 router_o.post(ressourcePath_s + '/delete/:id', function (req_opl, res_ops) {
     localEventData_o.del_by_id(req_opl.params.id);
     // Liste anzeigen
-    res_ops.redirect('/localevent');
+    res_ops.redirect('/organizer/eventsettings');
 });
 
 module.exports = router_o;
