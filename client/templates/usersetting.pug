@@ -32,6 +32,7 @@ block main-content
           input(type="hidden" id="sugg_events_l" name="sugg_events_l" value=`${localEvent_opl.sugg_events_l}` required)
         div.control
           button.button(formaction=`/user/add_sugg/${localEvent_opl.id_s}` formmethod="POST")= "Add Suggestion"
+          button.button(formaction=`/user/del_sugg/${localEvent_opl.id_s}` formmethod="POST")= "Del Suggestion"
       div.field 
         div.control 
           table.table
@@ -41,8 +42,6 @@ block main-content
             each suggested in localEvent_opl.sugg_events_l
               tr
                 td= suggested
-                td
-                  button.button(formaction=`/user/del_sugg/${suggested}` formmethod="POST")= "Delete"      
       div.field
         div.control 
           table
